@@ -1,20 +1,22 @@
-<div class="col-lg-4 col-md-6" id="<%= dom_id(project) %>">
-  <article class="card blog-card border-0 rounded-0 ">
-    <div class="card-background" style="background-color:<%= project.color %>"></div>
-    <a href="<%= url_for project %>" class=" text-center">
-      <% if project.primary_image.present? %>
-        <img loading="lazy" src="<%= cdn_proxy_url project.primary_image %>" style="height:100px;  object-fit: scale-down;" class="card-img rounded-0" alt="<%= project.name %> primary image">
-      <% end %>
-    </a>
-    <div class="card-body p-0 mt-4">
-      <span class="card-tag mb-2"><%= project.adjectives.join(" ") %></span>
-      <h4 class="card-title"><a href="<%= url_for project %>"><%= project.name %></a></h4>
-      <p class="card-text"><%= project.description %></p>
-      <% if local_assigns[:meta] %>
-        <%= content_tag(:p, class: 'card-meta mt-3') do %>
-          <%= local_assigns[:meta].call(project) %>
+<% cache [common_project_cache_keys, project] do %>
+  <div class="col-lg-4 col-md-6" id="<%= dom_id(project) %>">
+    <article class="card blog-card border-0 rounded-0 ">
+      <div class="card-background" style="background-color:<%= project.color %>"></div>
+      <a href="<%= url_for project %>" class=" text-center">
+        <% if project.primary_image.present? %>
+          <img loading="lazy" src="<%= cdn_proxy_url project.primary_image %>" style="height:100px;  object-fit: scale-down;" class="card-img rounded-0" alt="<%= project.name %> primary image">
         <% end %>
-      <% end %>
-    </div>
-  </article>
-</div>
+      </a>
+      <div class="card-body p-0 mt-4">
+        <span class="card-tag mb-2"><%= project.adjectives.join(" ") %></span>
+        <h4 class="card-title"><a href="<%= url_for project %>"><%= project.name %></a></h4>
+        <p class="card-text"><%= project.description %></p>
+        <% if local_assigns[:meta] %>
+          <%= content_tag(:p, class: 'card-meta mt-3') do %>
+            <%= local_assigns[:meta].call(project) %>
+          <% end %>
+        <% end %>
+      </div>
+    </article>
+  </div>
+<% end %>

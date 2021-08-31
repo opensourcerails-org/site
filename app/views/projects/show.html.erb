@@ -1,182 +1,184 @@
-<div class="order-last order-md-first col-lg-4">
-  <div class="mb-5 ">
-    <h3 class="h5 mb-2 text-dark">Popularity</h3>
-    <ul class="list-unstyled d-flex " id="buttons">
-      <li>
-        <iframe src="https://ghbtns.com/github-btn.html?user=<%= @project.user %>&repo=<%= @project.repo %>&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="<%= @project.github %>"></iframe>
-      </li>
-      <li>
-        <iframe src="https://ghbtns.com/github-btn.html?user=<%= @project.user %>&repo=<%= @project.repo %>&type=watch&count=true&size=large&v=2" frameborder="0" scrolling="0" width="170" height="30" title="<%= @project.github %>"></iframe>
-      </li>
-    </ul>
-    <p>Last commit was <%= time_ago_in_words(@project.last_activity_at) %> ago</p>
-
-    <a href="https://github.com/<%= @project.github %>" target="_blank" class="btn btn-black btn-block" data-text="View on GitHub"><span>View on GitHub</span></a>
-    <% if @project.website.present? %>
-      <a href="<%= @project.website %>" target="_blank" class="btn btn-black btn-block" data-text="Go to website" rel="nofollow noreferrer"><span>Go to website</span></a>
-    <% end %>
-  </div>
-  <% if @project.app_directories.any? %>
+<% cache cache_key_for_project do %>
+  <div class="order-last order-md-first col-lg-4">
     <div class="mb-5 ">
-      <h3 class="h5 mb-2 text-dark">App directory</h3>
-      <ul class="list-unstyled">
-        <% @project.app_directories.each do |dir| %>
-          <li class="text-monospace" style="font-size: 0.85rem">
-            <%= link_to dir['name'], search_object_path(dir['slug']) %>
-          </li>
-        <% end %>
+      <h3 class="h5 mb-2 text-dark">Popularity</h3>
+      <ul class="list-unstyled d-flex " id="buttons">
+        <li>
+          <iframe src="https://ghbtns.com/github-btn.html?user=<%= @project.user %>&repo=<%= @project.repo %>&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="<%= @project.github %>"></iframe>
+        </li>
+        <li>
+          <iframe src="https://ghbtns.com/github-btn.html?user=<%= @project.user %>&repo=<%= @project.repo %>&type=watch&count=true&size=large&v=2" frameborder="0" scrolling="0" width="170" height="30" title="<%= @project.github %>"></iframe>
+        </li>
       </ul>
-    </div>
-  <% end %>
-  <div class="mb-5 ">
-    <h3 class="h5 mb-2 text-dark">Gems <a href='#' data-toggle="modal" data-target="#gems" style="font-size:14px;">(view all <%= @project.gems.size %>)</a></h3>
-    <ul class="list-unstyled">
-      <% @project.most_popular_gems.each do |gem| %>
-        <li class="text-monospace" style="font-size: 0.85rem"><%= link_to gem['name'], search_gem_path(gem['slug']) %></li>
+      <p>Last commit was <%= time_ago_in_words(@project.last_activity_at) %> ago</p>
+
+      <a href="https://github.com/<%= @project.github %>" target="_blank" class="btn btn-black btn-block" data-text="View on GitHub"><span>View on GitHub</span></a>
+      <% if @project.website.present? %>
+        <a href="<%= @project.website %>" target="_blank" class="btn btn-black btn-block" data-text="Go to website" rel="nofollow noreferrer"><span>Go to website</span></a>
       <% end %>
-    </ul>
-  </div>
-  <div class="mb-5 ">
-    <% package_count = @project.packages.size %>
-    <% if package_count.zero? %>
-      <h3 class="h5 mb-2 text-dark">Packages</h3>
-      <p>No packages found.</p>
-    <% else %>
-      <h3 class="h5 mb-2 text-dark">Packages <a href='#' data-toggle="modal" data-target="#packages" style="font-size:14px;">(view all <%= @project.packages.size %>)</a></h3>
+    </div>
+    <% if @project.app_directories.any? %>
+      <div class="mb-5 ">
+        <h3 class="h5 mb-2 text-dark">App directory</h3>
+        <ul class="list-unstyled">
+          <% @project.app_directories.each do |dir| %>
+            <li class="text-monospace" style="font-size: 0.85rem">
+              <%= link_to dir['name'], search_object_path(dir['slug']) %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="mb-5 ">
+      <h3 class="h5 mb-2 text-dark">Gems <a href='#' data-toggle="modal" data-target="#gems" style="font-size:14px;">(view all <%= @project.gems.size %>)</a></h3>
       <ul class="list-unstyled">
-        <% @project.most_popular_packages.each do |package| %>
-          <li class="text-monospace" style="font-size: 0.85rem"><%= link_to package['name'], search_package_path(package['slug']) %></li>
+        <% @project.most_popular_gems.each do |gem| %>
+          <li class="text-monospace" style="font-size: 0.85rem"><%= link_to gem['name'], search_gem_path(gem['slug']) %></li>
         <% end %>
       </ul>
-    <% end %>
-  </div>
-</div>
-
-<div class="order-first order-md-last col-lg-8">
-  <div class="col-12 text-center">
-    <% if @project.primary_image.persisted? %>
-      <img loading="lazy" class="img-fluid mb-3" style="height:100px;" src="<%= cdn_proxy_url @project.primary_image %>" alt="<%= @project.name %> image">
-    <% end %>
-  </div>
-  <div class="pl-0 pl-lg-5">
-    <div class="mb-5">
-      <h2 class="text-dark h2 mb-3"><%= @project.name %></h2>
-      <p class="lead"><%= @project.description %></p>
     </div>
-
     <div class="mb-5 ">
-      <h3 class="h3 mb-3 text-dark">Our take</h3>
-      <p class="mb-3"><%= @project.short_blurb.presence || "This project was just recently added and I haven't gotten around to digging through it yet." %></p>
-    </div>
-
-    <div class="mb-5">
-      <h3 class="text-dark h3 mb-3">From GitHub</h3>
-      <p class="lead"><%= @project.github_about %></p>
-    </div>
-    <div class="mb-5 row">
-      <div class="col-12">
-        <h3 class="text-dark h3 mb-3">Back-end stack</h3>
-        <% if @project.backend_stack.none? %>
-          <p>Nothing special found.</p>
-        <% end %>
-        <ul class="list-unstyled list-inline">
-          <% @project.backend_stack.order(name: :asc).each do |item| %>
-            <li class="list-inline-item"><%= link_to item, search_stack_path(item['slug']) %></li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-    <div class="mb-5 row">
-      <div class="col-12">
-        <h3 class="text-dark h3 mb-3">Front-end stack</h3>
-        <% if @project.frontend_stack.none? %>
-          <p>Nothing special found.</p>
-        <% end %>
-        <ul class="list-unstyled list-inline">
-          <% @project.frontend_stack.order(name: :asc).each do |item| %>
-            <li class="list-inline-item"><%= link_to item, search_stack_path(item['slug']) %></li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-    <div class="mb-5 row">
-      <div class="col-6">
-        <h3 class="text-dark h3 mb-3">Categories</h3>
+      <% package_count = @project.packages.size %>
+      <% if package_count.zero? %>
+        <h3 class="h5 mb-2 text-dark">Packages</h3>
+        <p>No packages found.</p>
+      <% else %>
+        <h3 class="h5 mb-2 text-dark">Packages <a href='#' data-toggle="modal" data-target="#packages" style="font-size:14px;">(view all <%= @project.packages.size %>)</a></h3>
         <ul class="list-unstyled">
-          <% @project.categories.each do |item| %>
-            <li><%= link_to item['name'], search_category_path(item['slug']) %></li>
+          <% @project.most_popular_packages.each do |package| %>
+            <li class="text-monospace" style="font-size: 0.85rem"><%= link_to package['name'], search_package_path(package['slug']) %></li>
           <% end %>
         </ul>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="order-first order-md-last col-lg-8">
+    <div class="col-12 text-center">
+      <% if @project.primary_image.persisted? %>
+        <img loading="lazy" class="img-fluid mb-3" style="height:100px;" src="<%= cdn_proxy_url @project.primary_image %>" alt="<%= @project.name %> image">
+      <% end %>
+    </div>
+    <div class="pl-0 pl-lg-5">
+      <div class="mb-5">
+        <h2 class="text-dark h2 mb-3"><%= @project.name %></h2>
+        <p class="lead"><%= @project.description %></p>
       </div>
 
-      <div class="col-6">
-        <h3 class="text-dark h3 mb-3">Tags</h3>
-        <ul class="list-unstyled">
-          <% @project.adjectives.each do |item| %>
-            <li><%= item['name'] %></li>
+      <div class="mb-5 ">
+        <h3 class="h3 mb-3 text-dark">Our take</h3>
+        <p class="mb-3"><%= @project.short_blurb.presence || "This project was just recently added and I haven't gotten around to digging through it yet." %></p>
+      </div>
+
+      <div class="mb-5">
+        <h3 class="text-dark h3 mb-3">From GitHub</h3>
+        <p class="lead"><%= @project.github_about %></p>
+      </div>
+      <div class="mb-5 row">
+        <div class="col-12">
+          <h3 class="text-dark h3 mb-3">Back-end stack</h3>
+          <% if @project.backend_stack.none? %>
+            <p>Nothing special found.</p>
           <% end %>
-        </ul>
+          <ul class="list-unstyled list-inline">
+            <% @project.backend_stack.order(name: :asc).each do |item| %>
+              <li class="list-inline-item"><%= link_to item, search_stack_path(item['slug']) %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <div class="mb-5 row">
+        <div class="col-12">
+          <h3 class="text-dark h3 mb-3">Front-end stack</h3>
+          <% if @project.frontend_stack.none? %>
+            <p>Nothing special found.</p>
+          <% end %>
+          <ul class="list-unstyled list-inline">
+            <% @project.frontend_stack.order(name: :asc).each do |item| %>
+              <li class="list-inline-item"><%= link_to item, search_stack_path(item['slug']) %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <div class="mb-5 row">
+        <div class="col-6">
+          <h3 class="text-dark h3 mb-3">Categories</h3>
+          <ul class="list-unstyled">
+            <% @project.categories.each do |item| %>
+              <li><%= link_to item['name'], search_category_path(item['slug']) %></li>
+            <% end %>
+          </ul>
+        </div>
+
+        <div class="col-6">
+          <h3 class="text-dark h3 mb-3">Tags</h3>
+          <ul class="list-unstyled">
+            <% @project.adjectives.each do |item| %>
+              <li><%= item['name'] %></li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<%= admin_panel do %>
-  <%= link_to "edit", edit_admin_project_path(@project) %>
-  <%= simple_form_for [:admin, @project.object], remote: true do |f| %>
-    <%= f.input :name %>
-    <%= f.input :short_blurb %>
-    <%= f.input :description %>
-    <%= f.input :slug %>
-    <%= f.input :primary_image, as: :file %>
-    <%= f.submit %>
+  <%= admin_panel do %>
+    <%= link_to "edit", edit_admin_project_path(@project) %>
+    <%= simple_form_for [:admin, @project.object], remote: true do |f| %>
+      <%= f.input :name %>
+      <%= f.input :short_blurb %>
+      <%= f.input :description %>
+      <%= f.input :slug %>
+      <%= f.input :primary_image, as: :file %>
+      <%= f.submit %>
+    <% end %>
   <% end %>
+
+  <div class="modal" id="gems" tabindex="-1" aria-labelledby="gemsTitle" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="gemsTitle"><%= @project.name %> gems</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <% @project.gems.each do |gem| %>
+              <a class="list-group-item col-6 border-0" style="font-size:14px;" href="<%= search_gem_path(gem['slug']) %>"><%= gem['name'] %></a>
+            <% end %>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="packages" tabindex="-1" aria-labelledby="packagesTitle" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="packagesTitle"><%= @project.name %> packages</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <% @project.packages.each do |package| %>
+              <a class="list-group-item col-6 border-0" style="font-size:14px;" href="<%= search_package_path(package['slug']) %>"><%= package['name'] %></a>
+            <% end %>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
-
-<div class="modal" id="gems" tabindex="-1" aria-labelledby="gemsTitle" aria-modal="true" role="dialog">
-  <div class="modal-dialog modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="gemsTitle"><%= @project.name %> gems</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">×</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <% @project.gems.each do |gem| %>
-            <a class="list-group-item col-6 border-0" style="font-size:14px;" href="<%= search_gem_path(gem['slug']) %>"><%= gem['name'] %></a>
-          <% end %>
-        </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal" id="packages" tabindex="-1" aria-labelledby="packagesTitle" aria-modal="true" role="dialog">
-  <div class="modal-dialog modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="packagesTitle"><%= @project.name %> packages</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">×</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <% @project.packages.each do |package| %>
-            <a class="list-group-item col-6 border-0" style="font-size:14px;" href="<%= search_package_path(package['slug']) %>"><%= package['name'] %></a>
-          <% end %>
-        </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
