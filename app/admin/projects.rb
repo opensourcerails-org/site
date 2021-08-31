@@ -22,7 +22,7 @@ ActiveAdmin.register Project do
     redirect_to [:admin, resource], notice: 'Scraped app.'
   end
 
-  action_item :scrape_app do
+  action_item :scrape_app, only: [:show] do
     link_to 'Scrape app', scrape_app_admin_project_path(resource)
   end
 
@@ -31,11 +31,11 @@ ActiveAdmin.register Project do
     redirect_to [:admin, resource], notice: 'Scraped last activity.'
   end
 
-  action_item :scrape_last_activity do
+  action_item :scrape_last_activity, only: [:show] do
     link_to 'Scrape last activity', scrape_last_activity_admin_project_path(resource)
   end
 
-  action_item :scrape_meta do
+  action_item :scrape_meta, only: [:show] do
     link_to 'Scrape meta', scrape_meta_admin_project_path(resource)
   end
 
@@ -44,7 +44,7 @@ ActiveAdmin.register Project do
     redirect_to [:admin, resource], notice: 'Scraped meta.'
   end
 
-  action_item :check_pulse do
+  action_item :check_pulse, only: [:show] do
     link_to 'Check pulse', check_pulse_admin_project_path(resource)
   end
 
@@ -53,7 +53,7 @@ ActiveAdmin.register Project do
     redirect_to [:admin, resource], notice: 'Checked pulse.'
   end
 
-  action_item :analyze_stacks do
+  action_item :analyze_stacks, only: [:show] do
     link_to 'Analyze stack', analyze_stacks_admin_project_path(resource)
   end
 
@@ -62,7 +62,7 @@ ActiveAdmin.register Project do
     redirect_to [:admin, resource], notice: 'Analyzed stack.'
   end
 
-  action_item :scrape_gemfile do
+  action_item :scrape_gemfile, only: [:show] do
     link_to 'scrape gemfile', scrape_gemfile_admin_project_path(resource)
   end
 
@@ -71,7 +71,7 @@ ActiveAdmin.register Project do
     redirect_to [:admin, resource], notice: 'scraped gemfile.'
   end
 
-  action_item :scrape_packages do
+  action_item :scrape_packages, only: [:show] do
     link_to 'scrape packages', scrape_packages_admin_project_path(resource)
   end
 
@@ -84,7 +84,7 @@ ActiveAdmin.register Project do
     render template: 'admin/projects/colorpicker'
   end
 
-  action_item :colorpicker do
+  action_item :colorpicker, only: [:show] do
     link_to 'Colorpicker', colorpicker_admin_project_path(resource)
   end
 
