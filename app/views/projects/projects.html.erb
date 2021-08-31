@@ -10,7 +10,9 @@
         </div>
     <% end %>
     <div class="row">
-      <%= render partial: "/projects/project", collection:  local_assigns[:projects], locals: { meta: local_assigns[:meta] } %>
+      <% cache cache_key_for_projects(local_assigns[:projects]) do %>
+        <%= render partial: "/projects/project", collection:  local_assigns[:projects], locals: { meta: local_assigns[:meta] } %>
+      <% end %>
     </div>
   </div>
 </div>
