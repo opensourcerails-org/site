@@ -11,6 +11,10 @@ A directory of open-source Ruby on Rails apps that [joshmn](/joshmn) thinks are 
 
 There's a lot of cleaning up that could be done, but in my mad-dash of a weekend project, it's pretty okay.
 
+## Production requirements
+
+As of this blame, it hums along nicely with 
+
 ## Todos
 
 Probably test.
