@@ -16,10 +16,12 @@ module Projects
       @gems ||= tags_for_context(:gems)
     end
 
+    # because we're loading these as a hash for performance, do the ordering ourselves.
     def most_popular_gems
       gems.sort_by { |gem| gem['visible_taggings_count'] }.last(MOST_POPULAR_LIMIT)
     end
 
+    # because we're loading these as a hash for performance, do the ordering ourselves.
     def most_popular_packages
       packages.sort_by { |gem| gem['visible_taggings_count'] }.last(MOST_POPULAR_LIMIT)
     end
@@ -31,6 +33,11 @@ module Projects
     def app_directories
       tags_for_context(:app_directories)
     end
+
+    # eh not ready yet.
+    # def similar
+    #   Project.tagged_with(object.backend_stack.pluck(:name), :on => :backend_stack, :any => true)
+    # end
 
     private
 

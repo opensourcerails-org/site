@@ -39,3 +39,10 @@ module ActsAsTaggableOn
     end
   end
 end
+
+# using find_similar_* breaks with json/jsonb columns
+module ActsAsTaggableOn::Taggable::Core
+  def grouped_column_names_for(object)
+    object.column_names.select { |column| object.columns_hash[column].type != :json && object.columns_hash[column].type != :jsonb } .map { |column| "#{object.table_name}.#{column}" }.join(', ')
+  end
+end
