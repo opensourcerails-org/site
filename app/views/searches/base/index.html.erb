@@ -4,7 +4,7 @@
     <div class="row">
       <% @notable.each do |item| %>
         <div class="col-xs-6 col-sm-6 col-md-3">
-          <%= link_to item.name, current_path(item) %> <% if @includes_count %>(<%= item.visible_taggings_count %>)<% end %>
+          <%= link_to item.name, current_path_for_tag(item) %> <% if @includes_count %>(<%= item.visible_taggings_count %>)<% end %>
         </div>
       <% end %>
     </div>
@@ -12,7 +12,7 @@
     <div class="row">
       <% @items.each do |item| %>
         <div class="col-xs-6 col-sm-6 col-md-3">
-          <%= link_to item.name, current_path(item) %> <% if @includes_count %>(<%= item.visible_taggings_count %>)<% end %>
+          <%= link_to item.name, current_path_for_tag(item) %> <% if @includes_count %>(<%= item.visible_taggings_count %>)<% end %>
         </div>
       <% end %>
     </div>
@@ -20,7 +20,7 @@
     <div class="row">
       <% @items.each do |item| %>
         <div class="col-xs-6 col-sm-6 col-md-3">
-          <%= link_to item.name, current_path(item) %> <% if @includes_count %>(<%= item.visible_taggings_count %>)<% end %>
+          <%= link_to item.name, current_path_for_tag(item) %> <% if @includes_count %>(<%= item.visible_taggings_count %>)<% end %>
         </div>
       <% end %>
     </div>

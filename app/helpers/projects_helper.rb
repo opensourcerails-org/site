@@ -1,7 +1,11 @@
 module ProjectsHelper
-  def cache_key_for_projects(projects = @projects)
+  def cache_key_for_projects(projects = @projects, **extra_keys)
     max_updated_at = (projects.except(:group, :order).maximum(:updated_at) || Date.today).to_s(:number)
-    "projects/#{projects.map(&:id).join('-')}-#{controller_name}-#{max_updated_at}"
+    key = "projects/#{projects.map(&:id).join('-')}-#{controller_name}-#{max_updated_at}"
+    if extra_keys
+      key << extra_keys.join("-")
+    end
+    key
   end
 
   def cache_key_for_project(project = @project)

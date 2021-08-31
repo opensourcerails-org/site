@@ -1,1 +1,3 @@
-<%= render_projects(@projects, lead: "A curated list of great open-source Ruby on Rails applications.") %>
+<% cache cache_key_for_projects @projects do %>
+  <%= render_projects(@projects, lead: "A curated list of great open-source Ruby on Rails applications.") %>
+<% end %>

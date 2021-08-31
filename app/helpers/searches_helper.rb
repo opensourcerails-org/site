@@ -9,14 +9,14 @@ module SearchesHelper
     end
   end
 
-  def current_path(obj)
-    send(path_name, obj)
+  def current_path_for_tag(tag)
+    send(path_name, tag)
   end
 
   private
 
   def current_type
-    controller_name
+    controller_name.singularize
   end
 
   def path_name
