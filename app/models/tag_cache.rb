@@ -9,6 +9,11 @@ class TagCache
     end
     memoize :gems
 
+    def adjectives
+      tags_from_context(:adjectives)
+    end
+    memoize :adjectives
+
     def app_directories
       tags_from_context(:app_directories)
     end
