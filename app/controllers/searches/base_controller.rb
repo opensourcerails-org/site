@@ -23,7 +23,7 @@ module Searches
     def show
       @search_title = show_search_title
       set_meta_tags title: @search_title
-      ahoy.track "$viewed_#{current_type}", name: @item.name
+      ahoy.track "$viewed_#{controller_name}", name: @item.name
       render layout: 'projects'
     end
 
