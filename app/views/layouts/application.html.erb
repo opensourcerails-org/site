@@ -1,0 +1,79 @@
+<div class="scroll-progress cursor-pointer">
+  <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+    <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+  </svg>
+</div>
+<div class="adjust-navigation-height"></div>
+
+<header class="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <nav class="navbar navbar-expand-lg navbar-dark px-0 py-3 py-lg-4">
+          <a class="navbar-brand font-weight-bold mb-0" href="/" title="OpenSourceRails">
+            <img src="/android-chrome-192x192.png" alt="OpenSourceRails.org logo" style="max-height:48px;width:auto;">
+            <span class="d-none d-lg-inline-block h4">OpenSourceRails</span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="navbar-menu">
+            <svg viewBox="0 0 341.333 341.333"> <g> <g> <rect y="277.333" width="341.333" height="42.667"/> </g> </g> <g> <g> <rect y="149.333" width="341.333" height="42.667"/> </g> </g> <g> <g> <rect y="21.333" width="341.333" height="42.667"/> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
+          </button>
+
+          <div class="sidenav-overlay"></div>
+
+          <div class="navbar-collapse" id="navbar-menu">
+            <ul class="navbar-nav mx-auto">
+              <li data-toggle="navbar-menu-close"><i class="las la-times mr-1"></i>Close</li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= recently_added_projects_path %>">Newly added</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= last_active_projects_path %>">Active</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= most_popular_projects_path %>">Popular</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= search_path %>">Search</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= about_path %>">About</a>
+              </li>
+            </ul>
+
+            <div class="navbar-actions">
+              <a href="https://github.com/opensourcerails-org/suggestions" class="btn btn-white" data-text="Submit Project" target="_blank"><span>Submit Project</span></a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+<%= yield %>
+
+<footer class="">
+  <div class="mt-3 mb-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 text-center text-md-left">
+          <p class="h6 font-weight-light mb-2">Copyright &copy; <%= Time.current.year %>. Developed and maintained by
+            <a href="https://twitter.com/joshmn" class="line-link text-white font-weight-light" target="_blank" rel="nofollow">@joshmn</a>
+          </p>
+        </div>
+        <div class="col-md-3 text-center text-md-right">
+          <a href="https://github.com/opensourcerails-org/site" class="mr-3"><img src="/GitHub-Mark-Light-32px.png" height="16px" style="margin-top:-3px;"/></a>
+          <a href="<%= updates_path %>" class="h6 font-weight-light text-right text-sm-center line-link text-white font-weight-light mr-3">Updates</a>
+          <a href="https://twitter.com/joshmn" class="h6 font-weight-light text-right text-sm-center line-link text-white font-weight-light" target="_blank" rel="nofollow">Twitter</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<%= parent_layout 'base' %>

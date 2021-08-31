@@ -1,0 +1,235 @@
+// portfolio style
+.portfolio-card {
+  border: 0;
+  border-radius: 0;
+  overflow: hidden;
+  background-color: transparent;
+  .card-img {
+    border-radius: 0 !important;
+  }
+}
+
+.card-title,
+.card-subtitle,
+.card-img-overlay,
+.card-img img {
+  display: block;
+  will-change: transform, opacity;
+  transition: transform .7s cubic-bezier(.2,1,.2,1),opacity .7s cubic-bezier(.2,1,.2,1),-webkit-transform .7s cubic-bezier(.2,1,.2,1);
+}
+
+.card-title a,
+.card-subtitle a {
+  color: $white;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  -webkit-text-decoration-color: transparent;
+  -moz-text-decoration-color: transparent;
+  &:hover {
+    text-decoration: underline !important;
+    text-decoration-color: $white;
+    -webkit-text-decoration-color: $white;
+    -moz-text-decoration-color: $white;
+  }
+}
+.card-subtitle {
+  color: $white;
+}
+
+.card-overlay {
+  .card-img-overlay {
+    top: auto;
+    border-radius: 0;
+    z-index: 3;
+    padding: 3rem;
+    @include mobile {
+      padding: 2rem;
+    }
+  }
+  .card-title {
+    transform: translateY(100%);
+    @include desktop {
+      font-size: 30px;
+    }
+  }
+  .card-subtitle {
+    font-size: 15px;
+    opacity: .8;
+    transform: translateY(calc(-100% - 15px));
+  }
+  &:hover {
+    .card-img-overlay,
+    .card-title,
+    .card-subtitle {
+      transform: translateY(0);
+    }
+  }
+}
+
+.card-img {
+  .img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    opacity: 0;
+    background-color: $black;
+    transition: .3s ease;
+  }
+}
+
+.card-hover-zoom:hover {
+  .card-img {
+    img {
+      transform: scale(1.2);
+    }
+    .img-overlay {
+      opacity: 0.95;
+    }
+  }
+}
+
+// portfolio-carousel-fluid
+.portfolio-carousel-fluid {
+  .swiper-container {
+    cursor: grab;
+  }
+  .swiper-slide .portfolio-card {
+    margin: 0 40px;
+    @include desktop-lg {
+      margin: 0 30px;
+    }
+    @include desktop {
+      margin: 0 15px;
+    }
+  }
+  .card-img-overlay {
+    height: 100%;
+    top: 0;
+    padding: 1.25rem;
+    transform: translateY(0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .block {
+      .card-title,
+      .card-subtitle {
+        opacity: 0;
+        transition: transform .3s cubic-bezier(.2,1,.2,1),opacity .3s cubic-bezier(.2,1,.2,1),-webkit-transform .3s cubic-bezier(.2,1,.2,1) !important;
+        transform: translateY(60px);
+      }
+      .card-subtitle {
+        transition-delay: 0s !important;
+      }
+    }
+  }
+  .card-hover-zoom:hover {
+    .card-img-overlay .block {
+      .card-title,
+      .card-subtitle {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .card-subtitle {
+        transition-delay: .2s !important;
+      }
+    }
+  }
+  .swiper-pagination-progressbar {
+    top: auto;
+    bottom: 5px;
+    left: calc(50% - 165px);
+    width: 330px;
+    height: 3px;
+    background: rgba(200, 200, 200, 0.4);
+    transition-timing-function: cubic-bezier(.165,.84,.44,1);
+
+    @include mobile {
+      left: calc(50% - 100px);
+      width: 200px;
+    }
+
+    .swiper-pagination-progressbar-fill {
+      background: $color-dark;
+    }
+  }
+  .swipeCarousel-control {
+    position: relative;
+    height: 38px;
+    pointer-events: none;
+    .activeslide, .totalslide {
+      color: $black;
+      position: absolute;
+      top: calc(50% + 5px);
+      left: calc(50% - 200px);
+      line-height: 1;
+      font-weight: 600;
+
+      @include mobile {
+        left: calc(50% - 140px);
+      }
+    }
+    .totalslide {
+      left: auto;
+      right: calc(50% - 200px);
+
+      @include mobile {
+        right: calc(50% - 140px);
+      }
+    }
+  }
+  .swiper-button {
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: $black;
+    padding: 10px 12px;
+    transition: 0.3s;
+    &:hover {
+      opacity: .6;
+    }
+  }
+}
+
+
+// portfolio-masonry
+.portfolio-masonry {
+  .row {
+    @include desktop {
+      margin-bottom: 30px;
+    }
+  }
+  .portfolio-item {
+    margin-bottom: 80px;
+    @include desktop {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+
+// portfolio-grid-creative
+.portfolio-grid-creative {
+  .portfolio-card {
+    .block {
+      background-color: $white;
+      position: relative;
+      z-index: 2;
+      margin: 0 30px;
+      margin-top: -40px;
+      padding: 15px 25px;
+      transition: margin .3s;
+      text-align: center;
+    }
+    &:hover .block {
+      margin-top: -50px;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+  }
+}

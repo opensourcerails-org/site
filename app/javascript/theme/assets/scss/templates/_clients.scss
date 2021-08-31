@@ -1,0 +1,36 @@
+// clients logo grid
+.clients-logo-grid {
+  display: grid;
+  row-gap: 60px;
+  column-gap: 40px;
+  grid-template-columns: repeat(5,minmax(0,1fr));
+  @include desktop {
+    grid-template-columns: repeat(4,minmax(0,1fr));
+    column-gap: 20px;
+  }
+  @include tablet {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+  }
+  @include mobile-xs {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+  .logo-item {
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-self: center;
+    padding: 0 30px;
+    opacity: .6;
+    transition: .3s;
+    &:hover {
+      opacity: 1;
+    }
+    @include desktop {
+      padding: 0 20px;
+    }
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
+}
+}

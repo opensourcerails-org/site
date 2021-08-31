@@ -1,0 +1,18 @@
+<div class="section-sm">
+    <h5>Back-end Stacks</h5>
+    <div class="row">
+      <% @backend_stacks.each do |item| %>
+        <div class="col-xs-6 col-sm-6 col-md-3">
+          <%= link_to item.name, search_gem_path(item) %> <% if @includes_count %>(<%= item.visible_taggings_count %>)<% end %>
+        </div>
+      <% end %>
+    </div>
+    <h5>Front-end Stacks</h5>
+    <div class="row">
+      <% @frontend_stacks.each do |item| %>
+        <div class="col-xs-6 col-sm-6 col-md-3">
+          <%= link_to item.name, search_package_path(item) %> <% if @includes_count %>(<%= item.visible_taggings_count %>)<% end %>
+        </div>
+      <% end %>
+    </div>
+</div>

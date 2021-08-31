@@ -1,0 +1,3 @@
+<%= render_projects(@projects, title: "Recently added open-source Rails apps", lead: "Hand-selected, vetted, and curated, but not cured") do |project| %>
+   <%= "added #{time_ago_in_words project.created_at} ago" %>
+<% end %>

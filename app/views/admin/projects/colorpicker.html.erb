@@ -1,0 +1,12 @@
+<%= semantic_form_for [:admin, resource] do |f| %>
+  <%= f.inputs do %>
+    <% resource.extracted_colors.each do |color| %>
+      <label class="mb-5" style="left: 16px;position:relative;">
+        <span style="height:16px;width:32px;background-color:<%= color %>">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <input name="project[color]" value="<%= color %>" type="radio" />
+        <%= color %>
+      </label><br/>
+    <% end %>
+  <% end %>
+  <%= f.actions %>
+<% end %>

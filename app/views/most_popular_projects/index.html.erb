@@ -1,0 +1,3 @@
+<%= render_projects(@projects, title: "Most popular open-source Rails apps", lead: "Hand-picked for you by me, and made popular by someone else") do |project| %>
+  <%= pluralize(number_with_delimiter(project.stars), "star") %>
+<% end %>

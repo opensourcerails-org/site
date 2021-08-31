@@ -1,0 +1,25 @@
+/*! ------------------------------------------------------------------
+ # Template Name: Obicol - Agency & Portfolio Template
+ # Author: Platol (https://themeforest.net/user/platol)
+ # Description: Agency & Portfolio Template
+ # Version: 1.0.0
+-------------------------*/
+
+@import 'variables';
+@import 'mixins';
+@import 'typography';
+@import 'buttons';
+@import 'common';
+
+@import 'templates/navigation';
+@import 'templates/banner';
+@import 'templates/portfolio';
+@import 'templates/service';
+@import 'templates/clients';
+@import 'templates/reviews';
+@import 'templates/work-process';
+@import 'templates/blogs';
+@import 'templates/about';
+@import 'templates/pricing';
+@import 'templates/contact';
+@import 'templates/footer';

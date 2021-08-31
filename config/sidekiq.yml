@@ -1,0 +1,11 @@
+development:
+  :concurrency: 25
+production:
+  :concurrency: 25
+:queues:
+  - [default, 20]
+:schedule:
+  Bulk::Projects::SyncProjectsWorker:
+    every: '24h'
+  Bulk::Projects::WeeklySyncProjectsWorker:
+    every: '7d'

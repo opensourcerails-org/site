@@ -1,0 +1,28 @@
+<div class="bg-white">
+  <div class="container py-5">
+    <div class="row">
+      <div class="  d-flex flex-column justify-content-center w-100">
+        <h1 class="h2 d-block text-center ">Latest updates</h1>
+        <p class="lead d-block text-center">With words, but a non-exhaustive set of them.</p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-9 col-xl-8">
+        <% @updates.each do |update| %>
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h1 class="h4">
+                <%= update.title %>
+              </h1>
+              <span>
+                <%= update.date.to_s(:long) %>
+              </span>
+            </div>
+            <%= update.content.body.html_safe %>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

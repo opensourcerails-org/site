@@ -1,0 +1,159 @@
+.team-group-carousel {
+  .swiper-container {
+    cursor: grab;
+    @include tablet {
+      padding-right: 100px;
+    }
+    @include mobile {
+      padding-right: 75px;
+    }
+    @include mobile-md {
+      padding-right: 50px;
+    }
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+
+  .team-group-image {
+    text-align: center;
+    overflow: hidden;
+    display: inline-block;
+
+    img {
+      max-width: 100%;
+      transition: 2s cubic-bezier(.165, .84, .44, 1);
+
+      &.hold {
+        transform: scale(1.2);
+        transition: 0.3s cubic-bezier(.165, .84, .44, 1);
+      }
+    }
+  }
+}
+
+
+// team section
+.team-page .container {
+  margin-top: -35px;
+}
+.row-team {
+  @include mobile-xs {
+    .col-6 {
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+}
+.team-item {
+  margin-top: 35px;
+
+  @include mobile {
+    width: 100%;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+// open job positions
+.open-position-items {
+  a {
+    padding: 20px 0;
+    border-bottom: 1px solid #eae9e9;
+    position: relative;
+    &:first-child {
+      border-top: 1px solid #eae9e9;
+    }
+    h4 {
+      margin-bottom: 10px;
+    }
+    span {
+      color: #666;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      left: -15px;
+      bottom: 0;
+      height: 0;
+      width: calc(100% + 30px);
+      background-color: #f1f1f1;
+      transition: .3s;
+      z-index: -1;
+      pointer-events: none;
+    }
+    &:hover {
+      &::after {
+        height: 100%;
+        bottom: auto;
+        top: 0;
+      }
+    }
+  }
+}
+
+
+// about me style
+.about-me-image {
+  border-top-left-radius: 300px;
+  border-top-right-radius: 300px;
+  box-shadow: 0 -5px 0 $color-primary, 0 -10px 0 rgba($color-primary,.5), 0 -15px 0 rgba($color-primary,.25);
+}
+.about-me-slider {
+  position: sticky;
+  top: 50px;
+}
+.about-me-block {
+  &:not(:last-child) {
+    margin-bottom: 80px;
+  }
+  .about-me-title {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 40px;
+    &::before {
+      position: absolute;
+      content: "";
+      height: 100%;
+      width: 12px;
+      background-color: $color-primary;
+      top: 0;
+      left: 0;
+      border-radius: 15px;
+    }
+  }
+}
+
+// facts
+.facts-section {
+  .block {
+    .facts-box-title {
+      margin-bottom: 15px;
+      margin-top: -8px;
+      @include tablet {
+        margin-bottom: 10px;
+      }
+    }
+    p {
+      line-height: 1.4;
+    }
+  }
+  .facts-box {
+    @include tablet {
+      &:nth-child(1),
+      &:nth-child(2) {
+        margin-bottom: 45px;
+      }
+    }
+    @include mobile {
+      &:not(:last-child) {
+        margin-bottom: 45px;
+      }
+    }
+  }
+}

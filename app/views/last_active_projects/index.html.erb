@@ -1,0 +1,3 @@
+<%= render_projects(@projects, title: "Recently updated open-source Rails applications", lead: "Hot off the push and API request, and probably some background jobs") do |project| %>
+  <%= "Last updated #{project.last_activity_at ? time_ago_in_words(project.last_activity_at) : "sometime in the past"}" %>
+<% end %>

@@ -1,0 +1,19 @@
+.pricing-plans {
+  .block {
+    padding: 40px;
+    @include tablet {
+      padding: 40px 30px;
+    }
+    @include mobile {
+      padding: 40px 20px;
+    }
+  }
+  .price-wrapper {
+    .price {
+      font-size: 48px;
+      line-height: 56px;
+      font-weight: 700;
+    }
+    margin: 25px 0;
+  }
+}

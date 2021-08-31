@@ -1,0 +1,53 @@
+// banner style
+.banner {
+  padding-top: 100px;
+  padding-bottom: 150px;
+  color: #aaa;
+  @include desktop {
+    padding: 90px 0;
+  }
+  @include tablet {
+    padding-top: 60px;
+  }
+  .banner-title {
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1.2;
+    @include desktop {
+      font-size: 50px;
+    }
+    @include tablet {
+      font-size: 44px;
+    }
+    @include mobile {
+      font-size: 38px;
+    }
+    @include mobile-md {
+      font-size: 36px;
+    }
+  }
+  
+  .banner-shape {
+    height: 600px;
+    width: 560px;
+    max-width: 100%;
+    position: absolute;
+    top: -50%;
+    left: -200px;
+    z-index: -1;
+    opacity: .2;
+    color: #332D2B;
+    @include tablet {
+      left: -100px;
+      opacity: .3;
+    }
+  }
+}
+
+// page-header
+.page-header {
+  padding: 110px 0 140px 0;
+  .container {
+    margin-top: -6px;
+  }
+}

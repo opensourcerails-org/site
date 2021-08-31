@@ -1,0 +1,29 @@
+// service style
+.service-item {
+  @include desktop {
+    margin-bottom: 45px;
+  }
+}
+.service-icon-lg {
+  position: absolute;
+  width: calc(70% - 30px);
+  opacity: .05;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.service-info-list {
+  padding-left: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+  li {
+    list-style-type: none;
+    margin-bottom: 10px;
+    font-weight: 500;
+    flex: 0 0 calc(47% - 5px);
+    width: 100%;
+    margin-right: 5px;
+  }
+}

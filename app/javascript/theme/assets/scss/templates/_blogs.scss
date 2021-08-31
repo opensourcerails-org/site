@@ -1,0 +1,80 @@
+// blogs style
+.blog-card {
+  position: relative;
+  margin-top: 30px;
+  height: calc(100% - 30px);
+  padding: 30px;
+
+  @include mobile-xs {
+    padding: 20px;
+  }
+
+  .card-background {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.05;
+  }
+
+  .card-image {
+    overflow: hidden;
+    display: block;
+
+    img {
+      transform: scale(1.02);
+      transition: .3s;
+      transform-origin: right;
+    }
+
+    &:hover img {
+      transform-origin: left;
+    }
+  }
+
+  .card-text {
+    font-size: 15px;
+  }
+
+  .card-tag {
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+
+    a {
+      color: $color-muted;
+
+      &:hover {
+        color: #444444;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .card-title {
+    line-height: 1.4;
+    a {
+      display: inline-block;
+      color: $color-dark;
+      transition: .2s;
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      -webkit-text-decoration-color: transparent;
+      -moz-text-decoration-color: transparent;
+
+      &:hover {
+        color: #222222;
+        text-decoration-color: #444444;
+        -webkit-text-decoration-color: #444444;
+        -moz-text-decoration-color: #444444;
+      }
+    }
+  }
+
+  .card-meta {
+    font-size: 14px;
+  }
+}

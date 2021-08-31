@@ -1,0 +1,14 @@
+<%= render 'searches/top_bar' %>
+<section class="privacy-wrapper bg-white">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="content">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= parent_layout 'application' %>

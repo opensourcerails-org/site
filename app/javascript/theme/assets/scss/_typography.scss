@@ -1,0 +1,68 @@
+/* typography */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: $font-primary;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  font-size: $body-text-size;
+  color: $color-muted;
+  background-color: $color-dark;
+  line-height: 1.6;
+  .bg-light,
+  .bg-white {
+    color: #666;
+    .bg-dark {
+      color: $color-muted;
+    }
+  }
+}
+
+p,
+.paragraph {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+h4, h5, h6 {
+  font-weight: 700;
+}
+
+h1, .h1 {
+  font-size: $h1;
+  @include tablet {
+    font-size: $h1-md;
+  }
+}
+
+h2, .h2 {
+  font-size: $h2;
+  @include tablet {
+    font-size: $h2-md;
+  }
+}
+
+h3, .h3 {
+  font-size: $h3;
+  @include tablet {
+    font-size: $h3-md;
+  }
+}
+
+h4, .h4 {
+  font-size: $h4;
+}
+
+h5, .h5 {
+  font-size: $h5;
+}
+
+h6, .h6 {
+  font-size: $h6;
+}

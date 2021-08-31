@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= display_meta_tags(default_meta_tags) %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbo-track': 'reload' %>
+    <style>
+      #admin { position: fixed; bottom: 0; right: 0; padding: 10px; margin: 20px; background-color: white;    overflow-y: scroll;
+          max-height: calc(100vh - 150px); }
+      .cursor-pointer { cursor: pointer !important; }
+    </style>
+    <script src="https://blackbird.opensourcerails.org/script.js" data-site="DDZNMFUE" defer></script>
+  </head>
+
+  <body>
+  <%= yield %>
+  </body>
+</html>

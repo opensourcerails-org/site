@@ -1,0 +1,34 @@
+// footer style
+.footer-alt {
+  padding: 130px 0;
+  @include desktop {
+    padding: 100px 0;
+    .h1 {
+      font-size: 36px;
+    }
+  }
+}
+.footer-link {
+  margin-bottom: 10px;
+  li:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  &.text-center li {
+    margin-left: 13px !important;
+    margin-right: 13px !important;
+  }
+  a {
+    font-size: 15px;
+    color: rgba($white, 0.8);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    -webkit-text-decoration-color: transparent;
+    -moz-text-decoration-color: transparent;
+    &:hover {
+      color: rgba($white, 0.8);
+      text-decoration-color: rgba($white, 0.8);
+      -webkit-text-decoration-color: rgba($white, 0.8);
+      -moz-text-decoration-color: rgba($white, 0.8);
+    }
+  }
+}

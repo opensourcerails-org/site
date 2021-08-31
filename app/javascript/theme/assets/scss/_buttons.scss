@@ -1,0 +1,198 @@
+// buttons style
+.line-link {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  display: inline-flex;
+  font-weight: 500;
+
+  .icon,
+  .arrow-up-right {
+    position: relative;
+    top: 3px;
+    margin-left: 3px;
+  }
+
+  &.text-white:hover {
+    color: lighten($color-primary, 10) !important;
+  }
+
+  &.text-dark {
+    color: $black;
+    &::before,
+    &::after {
+      background-color: $color-dark;
+    }
+    &::before {
+      background-color: rgba($color-primary, .7);
+    }
+    &:hover {
+      color: $black !important;
+    }
+    svg {
+      opacity: .8;
+    }
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 0%;
+    background-color: rgba($color-primary, .8);
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: .4s cubic-bezier(0.2, 1, 0.3, 1);
+    pointer-events: none;
+  }
+
+  &::before {
+    width: 100%;
+    z-index: -2;
+    transition: 0s;
+    background-color: rgba($color-primary, .3);
+  }
+
+  &:hover::before {
+    width: 0%;
+    transition: .4s cubic-bezier(0.2, 1, 0.3, 1);
+  }
+
+  &:hover::after {
+    width: 100%;
+    right: auto;
+    left: 0;
+    transition-delay: .3s;
+  }
+}
+
+.btn {
+  $btn-height: 50px;
+
+  font-size: 15px;
+  height: $btn-height;
+  line-height: $btn-height;
+  padding: 0 30px;
+  font-weight: 500;
+  border: 0;
+  outline: 0;
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  display: inline-block;
+  line-height: 1;
+  @include mobile {
+    padding: 0 25px;
+  }
+
+  &:focus,
+  &:active {
+    box-shadow: none !important;
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    outline: 0;
+    box-shadow: none !important;
+  }
+
+  span {
+    display: inline-block;
+    height: $btn-height;
+    line-height: $btn-height;
+    transition: transform .65s cubic-bezier(0.2, 1, 0.3, 1), -webkit-transform .65s cubic-bezier(0.2, 1, 0.3, 1), opacity .2s;
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    content: attr(data-text);
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    height: 100%;
+    line-height: $btn-height;
+    transition: transform .65s cubic-bezier(0.2, 1, 0.3, 1), -webkit-transform .65s cubic-bezier(0.2, 1, 0.3, 1), opacity .2s;
+    transform: scale(0.95) translateY(12px);
+  }
+
+  &:hover {
+    span {
+      opacity: 0;
+      transform: scale(0.95)translateY(-12px);
+    }
+
+    &::after {
+      top: 0;
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+}
+
+.btn-white {
+  background: $white;
+  color: $black;
+  font-weight: 600;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $black;
+    background: $white;
+    border-color: $white;
+  }
+}
+
+.btn-black {
+  background: $black;
+  color: $white;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $white;
+    background: $black;
+    border-color: $black;
+  }
+}
+
+.btn-circle-white, .btn-circle-black {
+  height: 90px;
+  width: 90px;
+  border: 2px solid;
+  border-radius: 100%;
+  font-size: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  padding-left: 2px;
+  padding-bottom: 2px;
+  @include desktop {
+    height: 70px;
+    width: 70px;
+  }
+}
+.btn-circle-white {
+  color: $black;
+  border-color: $black;
+  &:hover {
+    background-color: $black;
+    color: $white;
+  }
+}
+.btn-circle-black {
+  color: $white;
+  border-color: $white;
+  &:hover {
+    background-color: $white;
+    color: $black;
+  }
+}

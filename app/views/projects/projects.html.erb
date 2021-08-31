@@ -1,0 +1,16 @@
+<div class="bg-white">
+  <div class="container <%= 'py-5' if local_assigns[:classes].nil? %><%=local_assigns[:classes] %>">
+    <% if local_assigns[:lead].present? %>
+      <div class="row">
+        <div class="  d-flex flex-column justify-content-center w-100">
+          <h1 class="h2 d-block text-center "><%= local_assigns[:title] || 'Open-Source Ruby on Rails Applications' %></h1>
+          <p class="lead d-block text-center"><%= local_assigns[:lead].html_safe %></p>
+
+        </div>
+        </div>
+    <% end %>
+    <div class="row">
+      <%= render partial: "/projects/project", collection:  local_assigns[:projects], locals: { meta: local_assigns[:meta] } %>
+    </div>
+  </div>
+</div>

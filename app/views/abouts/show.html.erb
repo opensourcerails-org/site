@@ -1,0 +1,107 @@
+<section class=" bg-white py-5">
+  <div class="container">
+    <div class="row justify-content-start justify-content-lg-between align-items-center py-sm-0">
+      <div class="col-xl-5 col-lg-6 order-last pt-3">
+        <img loading="lazy" class="img-fluid" src="/me.jpeg" alt="joshmn cowboy picture">
+        <p style="font-size:12px; text-align:center">joshmn cowboy version; joshmn is not always cowboy</p>
+      </div>
+      <div class="col-lg-6 mt-5 mt-lg-0 mt-0">
+        <p class="lead text-dark mb-3 ">Hi! I'm Josh. I really like open-source. It's not only good for the environment, but also a great learning tool.</p>
+        <p class="mb-3">When I was starting my Ruby on Rails journey in 2011, I attributed a lot of my good code to that of others. This was made possible by open-source projects.</p>
+        <p class="mb-3">I would visit <a href="http://web.archive.org/web/20130512052803/http://www.opensourcerails.com/" target=_blank>OpenSourceRails.com</a> almost daily, looking for inspiration and how other people wrote code. It was invaluable to me. However, like all good things, it has moved on.</p>
+        <p class="mb-3">After receiving the nod from <a href="https://github.com/jacquescrocker" target="_blank">Jacques Crocker</a>, the original creator of OpenSourceRails.com, I created my own directory of open-source Rails projects with a small twist: a short synopsis and tagging. Thanks Jacques!</p>
+        <p class="mb-3">I'm an occasional writer of technical-ish stuff, and fraud, sometimes piracy, and sometimes pizza at <a href="https://www.josh.mn">www.josh.mn</a> and I can be found on most places on the internet as <abbr>joshmn</abbr>.</p>
+        <%= turbo_frame_tag :newsletter_error %>
+        <%= turbo_frame_tag :newsletter do %>
+          <%= simple_form_for :newsletter, url: :newsletter, data: { 'turbo-frame': :newsletter } do |f| %>
+            <div class="input-group mb-3">
+              <%= f.input_field :email_address, placeholder: "Your email address", class: "form-control", style: "height: 50px;" %>
+              <div class="input-group-append">
+                <button class="btn btn-black" data-text="Sign up for the newsletter"><span>Sign up for my newsletter</span></button>
+              </div>
+            </div>
+          <% end %>
+          <p style="font-size:14px;">I send a brief, fun-to-read newsletter on the second Wednesday of each month with some bite-sized Railsisms and more from around the Rails community.</p>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-sm bg-light facts-section">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-12">
+        <div class="row justify-content-center">
+          <div class="col-md-3 col-sm-6 facts-box">
+            <div class="block ">
+              <h1 class="facts-box-title text-dark"><%= Project.visible.size %></h1>
+              <p class="font-weight-500">Ruby on Rails <br> applications analyzed</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 facts-box">
+            <div class="block ">
+              <h1 class="facts-box-title text-dark"><%= TagCache.categories.size %></h1>
+              <p class="font-weight-500">Categories &amp; <br> industries</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 facts-box">
+            <div class="block ">
+              <h1 class="facts-box-title text-dark"><%= TagCache.backend_stacks.size + TagCache.frontend_stacks.size %></h1>
+              <p class="font-weight-500">Monitored <br> stacks</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 facts-box">
+            <div class="block ">
+              <h1 class="facts-box-title text-dark"><%= TagCache.app_directories.size %></h1>
+              <p class="font-weight-500">Design pattern <br> examples</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class=" bg-white py-5">
+  <div class="container">
+    <div class="row justify-content-center align-items-center py-sm-0">
+
+      <div class="col-lg-6 mt-5 mt-lg-0 mt-0 justify-content-center">
+        <h4 class="text-dark mb-3 ">Credits and thanks</h4>
+        <p class="">This was made possible by a lot of people.</p>
+
+        <div class="mt-4 pt-2">
+          <p class="text-uppercase small font-weight-500 mb-1">Jacques Crocker</p>
+          <p><a href="https://github.com/jacquescrocker" target="_blank">Jacques Crocker</a> who created the original <a href="http://web.archive.org/web/20130512052803/http://www.opensourcerails.com/" target=_blank>OpenSourceRails.com</a> and gave me the go-ahead to work on his original idea.</p>
+        </div>
+
+        <div class="mt-4 pt-2">
+          <p class="text-uppercase small font-weight-500 mb-1">Hosting</p>
+          <p><a href="https://www.linode.com/?r=4e009e156eead07690ec15893ce4d466f44c6555" class="line-link text-dark">Linode takes care of hosting</a> (referral link that gets you $100 and I get $25). Their performance kicks the snot out of similar providers. Sign up using my referral link and get $100 credit, no joke.</p>
+        </div>
+
+        <div class="mt-4 pt-2">
+          <p class="text-uppercase small font-weight-500 mb-1">Infrastructure management</p>
+          <p><a href="https://hatchbox.io?via=josh-brody" class="line-link text-dark">HatchBox handles provisioning and deployment</a> so I don't have to play devops (referral link that tells Chris I love him). HatchBox is a godsend to bootstrappers like me. Try it, you'll love it, and you'll have a hard time going back to Heroku!</p>
+        </div>
+
+        <div class="mt-4 pt-2">
+          <p class="text-uppercase small font-weight-500 mb-1">Framework support</p>
+          <p><a href="https://rubygems.org" target="_blank" class="line-link text-dark">Contributors to the Ruby ecosystem</a>, and <a href="https://rubyonrails.org" target="_blank" class="line-link text-dark">Ruby on Rails</a> itself make me happy. I know nine languages well-enough to get to production, but only one is a joy to work with. Thank you, thank you, thank you.</p>
+        </div>
+        <div class="mt-4 pt-2">
+          <p class="text-uppercase small font-weight-500 mb-1">ActsAsTaggableOn and its contributors</p>
+          <p><a href="https://github.com/mbleigh" target="_blank" class="line-link text-dark">ActsAsTaggableOn makes tagging almost fun</a>. Basic tagging of objects is easy. But it quickly turns into a mess. <a href="https://github.com/mbeligh" target="_blank">mbeligh</a> is repsonsible for for this wonderful gem. It handles so much of this site.</p>
+        </div>
+        <div class="mt-4 pt-2">
+          <p class="text-uppercase small font-weight-500 mb-1">Bootstrap</p>
+          <p><a href="https://getbootstrap.com" target="_blank" class="line-link text-dark">Bootstrap</a> for not making me design. Changed the way that web works. If you don't remember what the web was like pre-Bootstrap, you're very young, and, you're very fortunate.</p>
+        </div>
+        <div class="mt-4 pt-2">
+          <p class="text-uppercase small font-weight-500 mb-1">Icon by freepik</p>
+          <p>Icons made by <a href="https://www.freepik.com" title="Freepik"  class="line-link text-dark" rel="nofollow noopener">Freepik</a> from <a href="https://www.flaticon.com/" class="line-link text-dark" title="Flaticon" rel="nofollow noopener">www.flaticon.com</a>. I'm not a designer, they are, and they have free icons.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
