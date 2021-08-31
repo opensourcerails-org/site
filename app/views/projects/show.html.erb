@@ -122,17 +122,6 @@
     </div>
   </div>
 
-  <%= admin_panel do %>
-    <%= link_to "edit", edit_admin_project_path(@project) %>
-    <%= simple_form_for [:admin, @project.object], remote: true do |f| %>
-      <%= f.input :name %>
-      <%= f.input :short_blurb %>
-      <%= f.input :description %>
-      <%= f.input :slug %>
-      <%= f.input :primary_image, as: :file %>
-      <%= f.submit %>
-    <% end %>
-  <% end %>
 
   <div class="modal" id="gems" tabindex="-1" aria-labelledby="gemsTitle" aria-modal="true" role="dialog">
     <div class="modal-dialog modal-dialog-scrollable">
@@ -181,4 +170,17 @@
       </div>
     </div>
   </div>
+<% end %>
+
+
+<%= admin_panel do %>
+  <%= link_to "edit", edit_admin_project_path(@project) %>
+  <%= simple_form_for [:admin, @project.object], remote: true do |f| %>
+    <%= f.input :name %>
+    <%= f.input :short_blurb %>
+    <%= f.input :description %>
+    <%= f.input :slug %>
+    <%= f.input :primary_image, as: :file %>
+    <%= f.submit %>
+  <% end %>
 <% end %>
