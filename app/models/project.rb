@@ -35,7 +35,7 @@ class Project < ApplicationRecord
                  select(:id, :slug, :name, :description, :short_blurb, :color, :updated_at).includes(:adjectives).with_attached_primary_image
                }
   scope :hidden, -> { where.not(hidden_at: nil) }
-  scope :visible, -> { where(hidden_at: nil) }
+  scope :visible, -> { left_joins(:primary_image_attachment).where(hidden_at: nil) }
 
   after_create_commit :scan_project_first!
 
