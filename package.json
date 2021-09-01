@@ -10,7 +10,6 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.2",
     "activeadmin_addons": "^1.0.0",
-    "ahoy.js": "^0.4.0",
     "sass": "^1.36.0",
     "sass-loader": "^10",
     "stimulus": "^2.0.0",
