@@ -1,1 +1,1 @@
-<div class="alert bg-danger text-white">Oh no, there was an error: <%= @error %></div>
+<% if @error %><div class="alert bg-danger text-white">Oh no, there was an error: <%= @error %></div><% end %>

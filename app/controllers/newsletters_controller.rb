@@ -12,6 +12,7 @@ class NewslettersController < ApplicationController
                             api_key: ENV['CONVERTKIT_API_KEY'],
                             email: params[:newsletter][:email_address]
                           })
+
     if @response.parsed_response['error']
       @error = {
         'Missing parameter' => 'email is invalid.'
@@ -21,7 +22,7 @@ class NewslettersController < ApplicationController
     if @error
       return respond_to do |f|
         f.turbo_stream do
-          render turbo_stream: turbo_stream.replace(:newsletter_error, template: '/newsletters/error.turbo.erb')
+          render turbo_stream: turbo_stream.append(:newsletter_error, template: '/newsletters/error.turbo.erb')
         end
       end
     end
