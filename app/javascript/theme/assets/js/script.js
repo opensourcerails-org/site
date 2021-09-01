@@ -1,5 +1,6 @@
 require("../../plugins/jquery/jquery.min.js")
 const bootstrap = require("../../plugins/bootstrap/bootstrap.bundle.min.js")
+
 ! function($) {
     window.$ = $
     "use strict";
@@ -30,10 +31,24 @@ const bootstrap = require("../../plugins/bootstrap/bootstrap.bundle.min.js")
             $(modal).modal('hide')
         });
     })
+    $(document).on('click', '[data-ahoy-event]', function(el) {
+        const data = {
+            name: el.target.getAttribute('data-ahoy-event'),
+            properties: JSON.parse(el.target.getAttribute('data-ahoy-properties')),
+        }
+        fetch("/sorry", {
+            method: "post",
+            body: JSON.stringify(data)
+        })
+    });
+
     $(document).on('turbo:load', (function() {
         $('.modal').modal('hide');
         $('body').on('show.bs.modal', function() {
             $('.navigation').addClass('header-unpinned');
+        });
+        $('#newsletterModal').on('hidden.bs.modal', function() {
+            $('.navigation').removeClass('header-unpinned');
         });
         var s;
         s = 0, window.onscroll = function() {

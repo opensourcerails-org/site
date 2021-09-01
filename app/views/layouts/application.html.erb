@@ -43,6 +43,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="<%= about_path %>">About</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= newsletter_path %>" data-ahoy-event="$click" data-ahoy-properties="<%= ({ target: "newsletter" }).to_json %>" data-toggle="modal" data-target="#newsletterModal">Newsletter</a>
+              </li>
             </ul>
 
             <div class="navbar-actions">
@@ -75,5 +78,32 @@
     </div>
   </div>
 </footer>
+
+<div class="modal" id="newsletterModal" tabindex="-1" aria-labelledby="newsletterTitle" aria-modal="true" role="dialog">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-dark" id="newsletterTitle">Sign up for my newsletter, please?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <%= simple_form_for :newsletter, url: :newsletter, data: { 'turbo-frame': :newsletter } do |f| %>
+        <div class="modal-body">
+          <%= turbo_frame_tag :newsletter_error %>
+          <%= turbo_frame_tag :newsletter do %>
+            <%= f.input_field :email_address, placeholder: "Your email address", class: "form-control mb-2" %>
+          <% end %>
+          <p class="mt-0 text-dark">I send a brief, fun-to-read newsletter on the second Wednesday of each month with some bite-sized Railsisms and more from around the Rails community.</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-text="I'd love you to have it!"><span>I'd love your newsletter!</span></button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Just kidding</button>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
 
 <%= parent_layout 'base' %>
