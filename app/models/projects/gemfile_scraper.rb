@@ -15,6 +15,10 @@ module Projects
       @gems = []
     end
 
+    # some weird ones:
+    # https://github.com/instructure/canvas-lms/blob/master/Gemfile.d/app.rb
+    # https://github.com/decidim/decidim
+    # https://github.com/solidusio/solidus/blob/master/core/solidus_core.gemspec
     def run
       parts = if @project.gems_path.present?
                 @project.gems_path.split('/')
