@@ -12,6 +12,28 @@ module ApplicationHelper
            locals: { projects: projects, lead: lead, title: title, classes: classes, meta: block }
   end
 
+  def default_meta_tags
+    {
+      site: 'OpenSourceRails.org',
+      reverse: true,
+      separator: '&mdash;'.html_safe,
+      twitter: {
+        card: :summary,
+        image: meta_tags.meta_tags.dig(:og, :image) || 'https://opensourcerails.org/android-chrome-512x512.png',
+        description: meta_tags[:description],
+        creator: '@joshmn',
+        title: "#{meta_tags[:title]} - OpenSourceRails.org"
+      },
+      og: {
+        site_name: 'OpenSourceRails.org',
+        url: request.url,
+        image: 'https://opensourcerails.org/android-chrome-512x512.png',
+        title: meta_tags[:title],
+        description: meta_tags[:description]
+      }
+    }
+  end
+
   def hide_admin?
     cookies[:hide_admin]
   end
