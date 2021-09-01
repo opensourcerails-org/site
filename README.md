@@ -2,6 +2,8 @@
 
 A directory of open-source Ruby on Rails apps that [joshmn](/joshmn) thinks are worth talking about for some reason or another.
 
+Have one to suggest? [Click here](https://github.com/opensourcerails-org/suggestions/issues/new).
+
 ## Setup
 
 * Clone the repo
