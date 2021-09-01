@@ -167,6 +167,7 @@ ActiveAdmin.register Project do
     end
     f.inputs 'Config' do
       f.input :gems_path, as: :string, hint: 'no starting slash, something like dir/Gemfile.lock'
+      f.input :packages_path, as: :string, hint: 'no starting slash, something like dir/package.json'
     end
     f.inputs 'Community' do
       f.input :watchers
