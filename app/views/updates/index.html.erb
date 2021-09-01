@@ -10,13 +10,13 @@
       <div class="col-12 col-md-10 col-lg-9 col-xl-8">
         <% @updates.each do |update| %>
           <div class="card-body">
-            <div class="d-flex justify-content-between">
+            <div class="d-flex flex-column mb-1">
               <h1 class="h4">
                 <%= update.title %>
               </h1>
-              <span>
+              <small>
                 <%= update.date.to_s(:long) %>
-              </span>
+              </small>
             </div>
             <%= update.content.body.html_safe %>
           </div>
