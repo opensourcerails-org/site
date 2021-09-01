@@ -8,6 +8,14 @@ ActiveAdmin.register Project do
   filter :name
   filter :hidden_at
 
+  batch_action :scan do |ids|
+    projects = Project.find(ids)
+    projects.each do |project|
+      project.send(:scan_project!)
+    end
+    redirect_back(fallback_location: admin_projects_path, notice: "Queued scan.")
+  end
+
   Project.tag_types.each do |type|
     scope "No #{type}", "without_tagged_#{type}".to_sym
   end
