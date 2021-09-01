@@ -8,7 +8,7 @@ class Project < ApplicationRecord
   attr_json :gems_path, :string
   attr_json :packages_path, :string
 
-  friendly_id :name, use: :slugged
+  friendly_id :name, use: [:slugged, :history]
   has_rich_text :content
   has_one_attached :primary_image
 
