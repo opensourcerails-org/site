@@ -3,6 +3,10 @@
 class NewslettersController < ApplicationController
   skip_after_action :track_action
 
+  def show
+    set_meta_tags title: "Newsletter"
+  end
+
   def create
     @response = HTTP.post("https://api.convertkit.com/v3/forms/#{ENV['CONVERTKIT_FORM_ID']}/subscribe", json: {
                             api_key: ENV['CONVERTKIT_API_KEY'],

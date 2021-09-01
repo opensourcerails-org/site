@@ -1,0 +1,19 @@
+<section class=" bg-white py-5">
+  <div class="container">
+    <div class="row justify-content-center align-items-center py-sm-0">
+      <div class="col-lg-6 mt-5 mt-lg-0 mt-0 justify-content-center">
+        <h4 class="text-dark text-center">Sign up for my newsletter, please?</h4>
+        <%= simple_form_for :newsletter, url: :newsletter, data: { 'turbo-frame': :newsletter } do |f| %>
+            <p class="my-3 text-dark">I send a brief, fun-to-read newsletter on the second Wednesday of each month with some bite-sized Railsisms and more from around the Rails community.</p>
+            <%= turbo_frame_tag :newsletter_error %>
+            <%= turbo_frame_tag :newsletter do %>
+              <%= f.input_field :email_address, placeholder: "Your email address", class: "form-control mb-2" %>
+            <% end %>
+            <button class="btn btn-primary w-100" data-text="I'd love you to have it!"><span>I'd love your newsletter!</span></button>
+          </div>
+
+      <% end %>
+      </div>
+    </div>
+  </div>
+</section>
