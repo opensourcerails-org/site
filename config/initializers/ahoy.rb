@@ -2,6 +2,9 @@
 
 module Ahoy
   class Store < Ahoy::DatabaseStore
+    def user
+      nil
+    end
   end
 end
 
