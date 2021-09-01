@@ -17,12 +17,14 @@ module Searches
       @includes_count = self.class.includes_count?
       @search_title = index_search_title
       set_meta_tags title: @search_title
+      @includes_search = true
       render layout: 'searches'
     end
 
     def show
       @search_title = show_search_title
       set_meta_tags title: @search_title
+      @includes_search = false
       ahoy.track "$viewed_#{controller_name}", name: @item.name
       render layout: 'projects'
     end
@@ -76,7 +78,7 @@ module Searches
     end
 
     def set_projects
-      @projects = Project.slim.visible.tagged_with(@item).distinct(:id)
+      @projects = Project.slim.visible.tagged_with(@item).order(name: :asc).distinct(:id)
     end
   end
 end
