@@ -12,7 +12,6 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/admin/sidekiq'
   end
 
-  resource :sorry, only: [:create]
   direct :cdn_proxy do |model, options|
     if model.respond_to?(:signed_id)
       route_for(
@@ -41,8 +40,6 @@ Rails.application.routes.draw do
   resources :most_popular_projects, path: 'most-popular', only: [:index]
   resources :recently_added_projects, path: 'recently-added', only: [:index]
   resources :last_active_projects, path: 'last-active', only: [:index]
-  resource :about, only: [:show]
-  resource :newsletter, only: [:show, :create]
 
   resource :search, only: [:show] do
     scope module: :searches do
@@ -56,8 +53,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resource :about, only: [:show]
+  resource :newsletter, only: [:show, :create]
+  resource :sorry, only: [:create]
   resources :updates, only: [:index]
   resources :sitemaps, only: [:index], path: 'sitemap'
+
   match '/404', to: 'errors#not_found', via: :all
   match '/500', to: 'errors#internal_error', via: :all
 end
