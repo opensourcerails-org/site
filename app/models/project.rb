@@ -5,10 +5,10 @@ class Project < ApplicationRecord
   include AttrJson::Record
 
   attr_json_config default_container_attribute: :data
-  friendly_id :name, use: :slugged
   attr_json :gems_path, :string
   attr_json :packages_path, :string
 
+  friendly_id :name, use: :slugged
   has_rich_text :content
   has_one_attached :primary_image
 
@@ -38,7 +38,9 @@ class Project < ApplicationRecord
   scope :hidden, -> { where.not(hidden_at: nil) }
   scope :visible, -> { where(hidden_at: nil) }
 
-  after_create_commit :scan_project_first!
+  attribute :skip_scan, :boolean, default: false
+
+  after_create_commit :scan_project_first!, unless: :skip_scan?
 
   def user
     @user ||= github.split('/')[0]

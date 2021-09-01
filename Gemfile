@@ -20,6 +20,16 @@ group :development, :test do
   gem 'pry-rails'
 end
 
+group :test do
+  gem 'factory_bot_rails'
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'database_cleaner-active_record'
+  gem 'webmock'
+  gem 'ffaker'
+  gem 'rails-controller-testing'
+end
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'

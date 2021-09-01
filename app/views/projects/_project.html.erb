@@ -1,5 +1,5 @@
 <% cache [common_project_cache_keys, project] do %>
-  <div class="col-lg-4 col-md-6" id="<%= dom_id(project) %>">
+  <div class="col-lg-4 col-md-6 project" id="<%= dom_id(project) %>">
     <article class="card blog-card border-0 rounded-0 ">
       <div class="card-background" style="background-color:<%= project.color %>"></div>
       <a href="<%= url_for project %>" class=" text-center">
