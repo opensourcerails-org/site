@@ -1,5 +1,5 @@
 <%= render 'searches/top_bar' %>
-<% cache cache_key_for_projects @projects, controller_name, @item.cache_key_with_version do %>
+<% cache cache_key_for_projects @projects, controller_name, @item.cache_key_with_version, params[:sort] do %>
   <%= render_projects(@projects, lead: "", classes: "pb-5") %>
 <% end %>
 <%= admin_panel do %>
