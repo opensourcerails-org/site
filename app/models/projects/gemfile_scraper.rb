@@ -52,6 +52,8 @@ module Projects
         parse_gemspec(content)
       elsif filename.end_with?('.lock')
         parse_lockfile(content)
+      elsif filename.end_with?('.rb') # assume it's a gemfile
+        parse_gemfile(content)
       else
         raise ArgumentError, "unknown parse strategy for #{filename}"
       end
@@ -69,7 +71,10 @@ module Projects
     end
 
     def parse_gemfile(content)
-      raise NotImplementedError
+      lines = content.scan(/^\s?gem\s*(?:'|")(.*)(?:'|")/).flatten
+      lines.each do |line|
+        @gems << line.split('"')[0].split("'")[0].split(',')[0]
+      end
     end
 
     # @todo: LOL
