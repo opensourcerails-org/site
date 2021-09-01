@@ -116,6 +116,9 @@ ActiveAdmin.register Project do
     column :primary_image do |resource|
       resource.primary_image.present?
     end
+    column :actions do |resource|
+      link_to "Edit", edit_admin_project_path(resource)
+    end
   end
 
   show do
