@@ -22,7 +22,7 @@ module ApplicationHelper
         image: meta_tags.meta_tags.dig(:og, :image) || 'https://opensourcerails.org/android-chrome-512x512.png',
         description: meta_tags[:description],
         creator: '@joshmn',
-        title: "#{meta_tags[:title]} - OpenSourceRails.org"
+        title: meta_tags[:title].present? ? "#{meta_tags[:title]} - OpenSourceRails.org" : "OpenSourceRails.org"
       },
       og: {
         site_name: 'OpenSourceRails.org',
