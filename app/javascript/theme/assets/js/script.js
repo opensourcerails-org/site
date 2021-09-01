@@ -32,13 +32,12 @@ const bootstrap = require("../../plugins/bootstrap/bootstrap.bundle.min.js")
         });
     })
     $(document).on('click', '[data-ahoy-event]', function(el) {
-        const data = {
-            name: el.target.getAttribute('data-ahoy-event'),
-            properties: JSON.parse(el.target.getAttribute('data-ahoy-properties')),
-        }
+        const formData = new FormData();
+        formData.append('name', el.target.getAttribute('data-ahoy-event'));
+        formData.append('properties', el.target.getAttribute('data-ahoy-properties'));
         fetch("/sorry", {
             method: "post",
-            body: JSON.stringify(data)
+            body: formData
         })
     });
 

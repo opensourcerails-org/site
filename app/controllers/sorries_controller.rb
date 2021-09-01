@@ -3,7 +3,7 @@ class SorriesController < ApplicationController
   skip_after_action :track_action
 
   def create
-    ahoy.track(params[:name], params[:properties])
+    ahoy.track(params[:name], JSON.parse(params[:properties]))
     head 200
   end
 end
