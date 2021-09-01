@@ -52,7 +52,7 @@ module Projects
         parse_gemspec(content)
       elsif filename.end_with?('.lock')
         parse_lockfile(content)
-      elsif filename.end_with?('.rb') # assume it's a gemfile
+      elsif filename.end_with?('.rb') || filename == 'Gemfile' # assume it's a gemfile
         parse_gemfile(content)
       else
         raise ArgumentError, "unknown parse strategy for #{filename}"
