@@ -5,6 +5,11 @@ module Searches
     self.notable = true
     self.includes_count = true
 
+    def show
+      @url = "https://rubygems.org/search?query=#{@item.name}"
+      super
+    end
+
     private
 
     def index_search_title
@@ -16,7 +21,7 @@ module Searches
     end
 
     def show_search_title
-      "Open-source Ruby on Rails projects using #{@item.name} gem"
+      "Ruby on Rails projects using #{@item.name} gem"
     end
   end
 end

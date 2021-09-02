@@ -15,7 +15,7 @@ module Searches
     end
 
     def show_search_title
-      "Open-source Ruby on Rails projects using #{@item.name} gem"
+      "Ruby on Rails projects using #{@item.name} gem"
     end
   end
 end

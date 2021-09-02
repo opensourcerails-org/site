@@ -11,7 +11,7 @@ module Searches
     end
 
     def show_search_title
-      "Open-source Ruby on Rails applications using #{@item.name}"
+      "Ruby on Rails applications using #{@item.name} objects"
     end
 
     def index_search_title

@@ -2,7 +2,14 @@
   <div class="container">
     <div class="row justify-content-center align-items-end">
       <div class="col-xl-8 col-md-6 ">
-        <h3 class="h5 text-dark font-weight-500 text-center text-md-left"><%= @search_title %></h3>
+        <h3 class="h5 text-dark font-weight-500 text-center text-md-left">
+          <%= @search_title %>
+          <% if @url && @url.include?("rubygems.org") %>
+          <a class="badge" style="border: 1px solid #e9573f; color: #e9573f; background-color: #fff;" href="<%= @url %>" rel="nofollow noopener" target="_blank" data-ahoy-event="$click" data-ahoy-properties='{"type": "rubygems"}'>On RubyGems</a>
+          <% elsif @url && @url.include?("npmjs") %>
+            <a class="badge" style="border: 1px solid black; color: black; background-color: #fff;" href="<%= @url %>" rel="nofollow noopener" target="_blank" data-ahoy-event="$click" data-ahoy-properties='{"type": "rubygems"}'>On npmjs</a>
+          <% end %>
+        </h3>
       </div>
       <div class="col-xl-4 col-md-6 text-lg-right mt-4 mt-lg-0 text-center text-md-left">
         <% if params[:sort] == 'popular' %><a class="mr-3 text-info" href="<%= request.path %>?sort=name">Sort by name</a><% else %><a href="<%= request.path %>?sort=popular" class="mr-3 text-info">Sort by popular</a><% end %>

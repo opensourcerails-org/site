@@ -13,7 +13,7 @@ module Searches
     end
 
     def show_search_title
-      "Open-source #{@item.name} Ruby on Rails projects"
+      "#{@item.name} Ruby on Rails projects"
     end
   end
 end
