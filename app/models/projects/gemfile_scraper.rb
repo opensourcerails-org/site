@@ -67,7 +67,7 @@ module Projects
     end
 
     def parse_lockfile(content)
-      dependencies_part = content.split(/^DEPENDENCIES$/)[1].split('BUNDLED WITH')[0]
+      dependencies_part = content.split(/^DEPENDENCIES/)[1].split('BUNDLED WITH')[0]
       dependencies_part.lines.each do |line|
         next if line.blank?
         break if line.empty?
