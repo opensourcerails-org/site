@@ -18,33 +18,36 @@ module Projects
     # some weird ones:
     # https://github.com/instructure/canvas-lms/blob/master/Gemfile.d/app.rb
     # https://github.com/decidim/decidim
+    # https://github.com/owen2345/camaleon-cms
     # https://github.com/solidusio/solidus/blob/master/core/solidus_core.gemspec
     def run
-      parts = if @project.gems_path.present?
-                @project.gems_path.split('/')
+      files = if @project.gems_path.present?
+                @project.gems_path.split(",").map { |path| path.strip.split("/") }
               else
-                ['Gemfile.lock']
+                [['Gemfile.lock']]
               end
 
-      content_item = nil
-      next_url = "https://api.github.com/repos/#{@project.github}/git/trees/#{@project.last_commit}"
-      parts.each_with_index do |part, index|
-        response = get(next_url)
-        json = JSON.parse(response.to_s)
-        type = index == (parts.size - 1) ? 'blob' : 'tree'
-        next_file = json['tree'].detect { |tree| tree['path'] == part && tree['type'] == type }
-        if type == 'blob'
-          content_item = next_file
-          break
-        else
-          next_url = next_file['url']
+      files.each do |parts|
+        content_item = nil
+        next_url = "https://api.github.com/repos/#{@project.github}/git/trees/#{@project.last_commit}"
+        parts.each_with_index do |part, index|
+          response = get(next_url)
+          json = JSON.parse(response.to_s)
+          type = index == (parts.size - 1) ? 'blob' : 'tree'
+          next_file = json['tree'].detect { |tree| tree['path'] == part && tree['type'] == type }
+          if type == 'blob'
+            content_item = next_file
+            break
+          else
+            next_url = next_file['url']
+          end
         end
+
+        content_response = get(content_item['url'])
+        content = Base64.decode64(content_response.parsed_response['content']).force_encoding('UTF-8')
+
+        parse_file(content, content_item['path'])
       end
-
-      content_response = get(content_item['url'])
-      content = Base64.decode64(content_response.parsed_response['content']).force_encoding('UTF-8')
-
-      parse_file(content, content_item['path'])
 
       @gems.flatten!
     end
