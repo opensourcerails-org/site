@@ -1,0 +1,81 @@
+[
+  {
+    "sha": "930b67b12015583880adf7a76ce442e5bc5eb5f1",
+    "node_id": "MDY6Q29tbWl0MzE2NjYxNTE6OTMwYjY3YjEyMDE1NTgzODgwYWRmN2E3NmNlNDQyZTViYzVlYjVmMQ==",
+    "commit": {
+      "author": {
+        "name": "dependabot[bot]",
+        "email": "49699333+dependabot[bot]@users.noreply.github.com",
+        "date": "2021-09-06T19:08:02Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2021-09-06T19:08:02Z"
+      },
+      "message": "Bump turbo-rails from 0.7.10 to 0.7.11 (#815)\n\nBumps [turbo-rails](https://github.com/hotwired/turbo-rails) from 0.7.10 to 0.7.11.\r\n- [Release notes](https://github.com/hotwired/turbo-rails/releases)\r\n- [Commits](https://github.com/hotwired/turbo-rails/compare/v0.7.10...v0.7.11)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: turbo-rails\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+      "tree": {
+        "sha": "c54ef41027276d709fd9d7ac0775e62d56c98c8b",
+        "url": "https://api.github.com/repos/SpinaCMS/Spina/git/trees/c54ef41027276d709fd9d7ac0775e62d56c98c8b"
+      },
+      "url": "https://api.github.com/repos/SpinaCMS/Spina/git/commits/930b67b12015583880adf7a76ce442e5bc5eb5f1",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJhNmcSCRBK7hj4Ov3rIwAAyp4IAEewkeC1NWYFq6aCm1XyXEzk\nFN/UhOlcL5Y/5ZTQJrA3FLnxjcUciEFu7+qk+kUePiNNw7G0Q+y9+ATIBGZyyJa/\noQB6U/5GUda3MFpyCqeufenhBuL7pDluH1VOddXnI5YXdTMxEEXBkcOPNmUQR6c7\nsjyhX72wO979chijz2B1X/H9+MNv8DkeJ5WoQq1zmH/xKAC2wSklRueDdSNSIeMR\nB/iO+GtDyMbBN/O9V/n//I9ryLP2hGNy+ELLO3Ng7jsvweAbhMu0/4612Or95ki0\ny/9WGGBnXa+BtXLZ2YpyOR98xhd7pIXU0hm9Tg4LzVPD8pVCLnIEg7nwX8xT/K4=\n=qVaT\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree c54ef41027276d709fd9d7ac0775e62d56c98c8b\nparent 09c7b837f9536e8292f04b66d39ebd388ae50caf\nauthor dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com> 1630955282 +0200\ncommitter GitHub <noreply@github.com> 1630955282 +0200\n\nBump turbo-rails from 0.7.10 to 0.7.11 (#815)\n\nBumps [turbo-rails](https://github.com/hotwired/turbo-rails) from 0.7.10 to 0.7.11.\r\n- [Release notes](https://github.com/hotwired/turbo-rails/releases)\r\n- [Commits](https://github.com/hotwired/turbo-rails/compare/v0.7.10...v0.7.11)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: turbo-rails\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      }
+    },
+    "url": "https://api.github.com/repos/SpinaCMS/Spina/commits/930b67b12015583880adf7a76ce442e5bc5eb5f1",
+    "html_url": "https://github.com/SpinaCMS/Spina/commit/930b67b12015583880adf7a76ce442e5bc5eb5f1",
+    "comments_url": "https://api.github.com/repos/SpinaCMS/Spina/commits/930b67b12015583880adf7a76ce442e5bc5eb5f1/comments",
+    "author": {
+      "login": "dependabot[bot]",
+      "id": 49699333,
+      "node_id": "MDM6Qm90NDk2OTkzMzM=",
+      "avatar_url": "https://avatars.githubusercontent.com/in/29110?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dependabot%5Bbot%5D",
+      "html_url": "https://github.com/apps/dependabot",
+      "followers_url": "https://api.github.com/users/dependabot%5Bbot%5D/followers",
+      "following_url": "https://api.github.com/users/dependabot%5Bbot%5D/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dependabot%5Bbot%5D/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dependabot%5Bbot%5D/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dependabot%5Bbot%5D/subscriptions",
+      "organizations_url": "https://api.github.com/users/dependabot%5Bbot%5D/orgs",
+      "repos_url": "https://api.github.com/users/dependabot%5Bbot%5D/repos",
+      "events_url": "https://api.github.com/users/dependabot%5Bbot%5D/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dependabot%5Bbot%5D/received_events",
+      "type": "Bot",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "09c7b837f9536e8292f04b66d39ebd388ae50caf",
+        "url": "https://api.github.com/repos/SpinaCMS/Spina/commits/09c7b837f9536e8292f04b66d39ebd388ae50caf",
+        "html_url": "https://github.com/SpinaCMS/Spina/commit/09c7b837f9536e8292f04b66d39ebd388ae50caf"
+      }
+    ]
+  }
+]

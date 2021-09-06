@@ -1,0 +1,70 @@
+{
+  "sha": "d1c10a0ade4f74a8b91b8566519ac18d61d3c988",
+  "url": "https://api.github.com/repos/errbit/errbit/git/trees/d1c10a0ade4f74a8b91b8566519ac18d61d3c988",
+  "tree": [
+    {
+      "path": "assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e5fe7a774f96f26077c51cf33a95a1aceefbbb39",
+      "url": "https://api.github.com/repos/errbit/errbit/git/trees/e5fe7a774f96f26077c51cf33a95a1aceefbbb39"
+    },
+    {
+      "path": "controllers",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9b3e20dd063d779a96050cb50b88ff7924e68294",
+      "url": "https://api.github.com/repos/errbit/errbit/git/trees/9b3e20dd063d779a96050cb50b88ff7924e68294"
+    },
+    {
+      "path": "decorators",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7e56a01fe6e781f65f98a12448b1eb8e715b74b3",
+      "url": "https://api.github.com/repos/errbit/errbit/git/trees/7e56a01fe6e781f65f98a12448b1eb8e715b74b3"
+    },
+    {
+      "path": "helpers",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8fde11047888eef8a2a084d1eabb35530a265ba8",
+      "url": "https://api.github.com/repos/errbit/errbit/git/trees/8fde11047888eef8a2a084d1eabb35530a265ba8"
+    },
+    {
+      "path": "interactors",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "eb87dc4b789800463a47ea1c07703ed063705aba",
+      "url": "https://api.github.com/repos/errbit/errbit/git/trees/eb87dc4b789800463a47ea1c07703ed063705aba"
+    },
+    {
+      "path": "jobs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2c76323d582c1d42062215ce82cdfdc46710022d",
+      "url": "https://api.github.com/repos/errbit/errbit/git/trees/2c76323d582c1d42062215ce82cdfdc46710022d"
+    },
+    {
+      "path": "mailers",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3c61a24d8a6a79a1c28e6b6a282234354ea97ccf",
+      "url": "https://api.github.com/repos/errbit/errbit/git/trees/3c61a24d8a6a79a1c28e6b6a282234354ea97ccf"
+    },
+    {
+      "path": "models",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e04c21c9b59db1890e374991f540c988e9d85366",
+      "url": "https://api.github.com/repos/errbit/errbit/git/trees/e04c21c9b59db1890e374991f540c988e9d85366"
+    },
+    {
+      "path": "views",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7be646003f32d9f24aa8d69f00c3701778635f3c",
+      "url": "https://api.github.com/repos/errbit/errbit/git/trees/7be646003f32d9f24aa8d69f00c3701778635f3c"
+    }
+  ],
+  "truncated": false
+}

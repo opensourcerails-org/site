@@ -32,7 +32,8 @@ module Projects
       end
 
       content_response = get(content_item['url'])
-      content = Base64.decode64(content_response.parsed_response['content']).force_encoding('UTF-8')
+      content_json = JSON.parse(content_response.to_s)
+      content = Base64.decode64(content_json['content']).force_encoding('UTF-8')
 
       json = JSON.parse(content)
       @packages = json['dependencies'].keys if json['dependencies']

@@ -37,6 +37,7 @@ describe TagCache do
     end
   end
 
+  # this is flaky
   context 'packages' do
     let!(:package) { create(:package) }
     subject { TagCache.packages }

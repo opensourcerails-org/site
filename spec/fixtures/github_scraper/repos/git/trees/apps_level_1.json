@@ -1,0 +1,245 @@
+{
+  "sha": "6b09c7891e8488eedcc79af760b0f27efc4cabaa",
+  "url": "https://api.github.com/repos/errbit/errbit/git/trees/6b09c7891e8488eedcc79af760b0f27efc4cabaa",
+  "tree": [
+    {
+      "path": ".env.default",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2c0cfce563a273db3715e4ed670eb610b6adaa80",
+      "size": 1003,
+      "url": "https://api.github.com/repos/errbit/errbit/git/blobs/2c0cfce563a273db3715e4ed670eb610b6adaa80"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "702f986b29fe4565e6b532cf98ffb8dd71e50a1f",
+      "size": 237,
+      "url": "https://api.github.com/repos/errbit/errbit/git/blobs/702f986b29fe4565e6b532cf98ffb8dd71e50a1f"
+    },
+    {
+      "path": ".rspec",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2f0d715186ba6cd9a575291db42bf87ffffa6b61",
+      "size": 45,
+      "url": "https://api.github.com/repos/errbit/errbit/git/blobs/2f0d715186ba6cd9a575291db42bf87ffffa6b61"
+    },
+    {
+      "path": ".rubocop.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a85d43ce6972a402ce28f35f28a9e97be5081791",
+      "size": 1198,
+      "url": "https://api.github.com/repos/errbit/errbit/git/blobs/a85d43ce6972a402ce28f35f28a9e97be5081791"
+    },
+    {
+      "path": ".rubocop_todo.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "987beec0729556b9c8d6a4fd9fc75d43be7c65fb",
+      "size": 15231,
+      "url": "https://api.github.com/repos/errbit/errbit/git/blobs/987beec0729556b9c8d6a4fd9fc75d43be7c65fb"
+    },
+    {
+      "path": ".travis.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "98652d32b2055b1709874b0f3afff7090a4ec369",
+      "size": 1064,
+      "url": "https://api.github.com/repos/errbit/errbit/git/blobs/98652d32b2055b1709874b0f3afff7090a4ec369"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d906143dc6c751ac047e9bbdcba87e1a97048972",
+      "size": 10880,
+      "url": "https://api.github.com/repos/errbit/errbit/git/blobs/d906143dc6c751ac047e9bbdcba87e1a97048972"
+    },
+    {
+      "path": "CHECKS",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "02a571d1ecefbdcf52d505570ff59ad2b20ba66c",
+      "size": 22,
+      "url": "https://api.github.com/repos/errbit/errbit/git/blobs/02a571d1ecefbdcf52d505570ff59ad2b20ba66c"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bce0af31b11d2de98f4da5dd31657488eb1ce06a",
+      "size": 1974,
+      "url": "https://api.github.com/repos/errbit/errbit/git/blobs/bce0af31b11d2de98f4da5dd31657488eb1ce06a"
+    },
+    {
+      "path": "Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff475046ba9bc26900768ec338d24682ced28c03",
+      "size": 1201,
+      "url": "https://api.github.com/repos/errbit/errbit/git/blobs/ff475046ba9bc26900768ec338d24682ced28c03"
+    },
+    {
+      "path": "Gemfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b7fe100d064eb9794800e91b53bca7da0e2ba0f6",
+      "size": 2247,
+      "url": "https://api.github.com/repos/errbit/errbit/git/blobs/b7fe100d064eb9794800e91b53bca7da0e2ba0f6"
+    },
+    {
+      "path": "Gemfile.lock",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "92c2028a8d44d1c57f8ebf58c803af3b2eee0095",
+      "size": 11762,
+      "url": "https://api.github.com/repos/errbit/errbit/git/blobs/92c2028a8d44d1c57f8ebf58c803af3b2eee0095"
+    },
+    {
+      "path": "ISSUE_TEMPLATE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5b6d426e1eb39ac3a2fe9c2322844abed33b8549",
+      "size": 603,
+      "url": "https://api.github.com/repos/errbit/errbit/git/blobs/5b6d426e1eb39ac3a2fe9c2322844abed33b8549"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a033bf5b75a3dedd2320f3918a90b59b21b9dfd8",
+      "size": 1055,
+      "url": "https://api.github.com/repos/errbit/errbit/git/blobs/a033bf5b75a3dedd2320f3918a90b59b21b9dfd8"
+    },
+    {
+      "path": "Procfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e91374b97551eedca82d2435a050db917068fad1",
+      "size": 48,
+      "url": "https://api.github.com/repos/errbit/errbit/git/blobs/e91374b97551eedca82d2435a050db917068fad1"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3042996cd11a6a9c94a9c929347ce3fc695b3151",
+      "size": 14342,
+      "url": "https://api.github.com/repos/errbit/errbit/git/blobs/3042996cd11a6a9c94a9c929347ce3fc695b3151"
+    },
+    {
+      "path": "RELEASE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e4144f88bf7c23c7d765abaedf69db17a97b262d",
+      "size": 441,
+      "url": "https://api.github.com/repos/errbit/errbit/git/blobs/e4144f88bf7c23c7d765abaedf69db17a97b262d"
+    },
+    {
+      "path": "Rakefile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fa6762643c5d6d80d40b6b18547ac6a071e93f04",
+      "size": 714,
+      "url": "https://api.github.com/repos/errbit/errbit/git/blobs/fa6762643c5d6d80d40b6b18547ac6a071e93f04"
+    },
+    {
+      "path": "app.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49add17dd8b578e45197f5532493238ee7b2590b",
+      "size": 1252,
+      "url": "https://api.github.com/repos/errbit/errbit/git/blobs/49add17dd8b578e45197f5532493238ee7b2590b"
+    },
+    {
+      "path": "app",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d1c10a0ade4f74a8b91b8566519ac18d61d3c988",
+      "url": "https://api.github.com/repos/errbit/errbit/git/trees/level_2"
+    },
+    {
+      "path": "autotest",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e6d1b5e8fbd04a2d80055530784c959beb70adf5",
+      "url": "https://api.github.com/repos/errbit/errbit/git/trees/e6d1b5e8fbd04a2d80055530784c959beb70adf5"
+    },
+    {
+      "path": "bin",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8ef16ba012e91b0bf696af33255e8e97df73694d",
+      "url": "https://api.github.com/repos/errbit/errbit/git/trees/8ef16ba012e91b0bf696af33255e8e97df73694d"
+    },
+    {
+      "path": "config.ru",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76d9bb006c77502e78046b46cb7cd3fab372097f",
+      "size": 172,
+      "url": "https://api.github.com/repos/errbit/errbit/git/blobs/76d9bb006c77502e78046b46cb7cd3fab372097f"
+    },
+    {
+      "path": "config",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c1c6f18c0b535beee11d67050177f1683032fbd3",
+      "url": "https://api.github.com/repos/errbit/errbit/git/trees/c1c6f18c0b535beee11d67050177f1683032fbd3"
+    },
+    {
+      "path": "db",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d9aed8175b0172160a19391a3bfae20e5ce8a536",
+      "url": "https://api.github.com/repos/errbit/errbit/git/trees/d9aed8175b0172160a19391a3bfae20e5ce8a536"
+    },
+    {
+      "path": "docker-compose.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "44ef190bcfa1cc6b3a0b8abf9ffa65503940d32a",
+      "size": 294,
+      "url": "https://api.github.com/repos/errbit/errbit/git/blobs/44ef190bcfa1cc6b3a0b8abf9ffa65503940d32a"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "aed0f8f5728d27746870960b88900fe380f78ca2",
+      "url": "https://api.github.com/repos/errbit/errbit/git/trees/aed0f8f5728d27746870960b88900fe380f78ca2"
+    },
+    {
+      "path": "lib",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c1343347a3b78af6f9a2ef452aa7c0391a935a3e",
+      "url": "https://api.github.com/repos/errbit/errbit/git/trees/c1343347a3b78af6f9a2ef452aa7c0391a935a3e"
+    },
+    {
+      "path": "public",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3f98bae0d504b6e3546f93835902685c032894ad",
+      "url": "https://api.github.com/repos/errbit/errbit/git/trees/3f98bae0d504b6e3546f93835902685c032894ad"
+    },
+    {
+      "path": "script",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ad9cd3f519d9737085940d9c6b4d7fb870c83a36",
+      "url": "https://api.github.com/repos/errbit/errbit/git/trees/ad9cd3f519d9737085940d9c6b4d7fb870c83a36"
+    },
+    {
+      "path": "spec",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a84d5bbb0e11d487c615475b497afea0263f4cfc",
+      "url": "https://api.github.com/repos/errbit/errbit/git/trees/a84d5bbb0e11d487c615475b497afea0263f4cfc"
+    }
+  ],
+  "truncated": false
+}
