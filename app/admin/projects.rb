@@ -2,7 +2,7 @@
 
 ActiveAdmin.register Project do
   permit_params(:name, :slug, :rails_major_version, :github, :github_about, :website, :contributors, :dependents, :stars,
-                :watchers, :forks, :app, :content, :description, :primary_image, :short_blurb, :color, :hidden_at, :gems_path,
+                :watchers, :forks, :app, :content, :description, :primary_image, :short_blurb, :color, :hidden_at, :gems_path, :packages_path,
                 stack_list: [], category_list: [], adjective_list: [])
 
   filter :name
