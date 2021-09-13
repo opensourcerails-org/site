@@ -16,6 +16,8 @@ module ActsAsTaggableOn
       contexts = taggings.distinct(:context).pluck(:context)
       contexts.each do |context|
         if context.end_with?('_stack')
+          TagCache.backend_stacks(true)
+          TagCache.frontend_stacks(true)
           TagCache.stacks(true)
         elsif TagCache.respond_to?(context)
           TagCache.public_send(context, true)
