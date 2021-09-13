@@ -12,6 +12,12 @@ module JsonAttribute
         read_attribute(column_name)[name.to_s]
       end
 
+      if type == :boolean
+        define_method "#{name}?" do
+          read_attribute(column_name)[name.to_s]
+        end
+      end
+
       define_method :"#{name}=" do |val|
         super(val)
         read_attribute(column_name)[name.to_s] = read_attribute(name)

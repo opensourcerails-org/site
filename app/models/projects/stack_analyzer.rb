@@ -11,8 +11,8 @@ module Projects
 
     def initialize(project)
       @project = project
-      @frontend_packages = FRONTEND_STACKS + TagCache.frontend_stacks.pluck(:name)
-      @backend_packages = BACKEND_STACKS + TagCache.backend_stacks.pluck(:name)
+      @frontend_packages = (FRONTEND_STACKS + TagCache.frontend_stacks.pluck(:name) + ActsAsTaggableOn::Tag.joins(:taggings).where(taggings: { context: ["frontend_stack", "packages"] }).where("data->>'stack' = ?", 'true').distinct(:id).pluck(:name)).uniq
+      @backend_packages = (BACKEND_STACKS + TagCache.backend_stacks.pluck(:name) + ActsAsTaggableOn::Tag.joins(:taggings).where(taggings: { context: ["backend_stack", "gems"] }).where("data->>'stack' = ?", 'true').distinct(:id).pluck(:name)).uniq
       @backend = []
       @frontend = []
     end

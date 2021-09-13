@@ -18,6 +18,8 @@ module ActsAsTaggableOn
         if context.end_with?('_stack')
           TagCache.backend_stacks(true)
           TagCache.frontend_stacks(true)
+          TagCache.gems(true)
+          TagCache.packages(true)
           TagCache.stacks(true)
         elsif TagCache.respond_to?(context)
           TagCache.public_send(context, true)
@@ -27,6 +29,10 @@ module ActsAsTaggableOn
 
     def self.with_context(context)
       where(id: ActsAsTaggableOn::Tag.select(:id).distinct(:id).joins(:taggings).where(taggings: { context: context })).where('visible_taggings_count > 0')
+    end
+
+    def contexts
+      taggings.distinct(:context).pluck(:context)
     end
   end
 end

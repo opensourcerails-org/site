@@ -13,6 +13,8 @@ ActiveAdmin.register ActsAsTaggableOn::Tag do
   filter :taggings_context_eq, as: :select, collection: lambda {
                                                           ActsAsTaggableOn::Tagging.distinct(:context).pluck(:context)
                                                         }
+  filter :name
+  filter :slug
 
   controller do
     def find_resource
