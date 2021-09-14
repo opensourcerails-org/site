@@ -21,6 +21,7 @@ module Searches
     end
 
     def show
+      @show_admin = show_admin?
       @search_title = show_search_title
       set_meta_tags title: @search_title
       ahoy.track "$viewed_#{controller_name}", name: @item.name
@@ -28,6 +29,10 @@ module Searches
     end
 
     private
+
+    def show_admin?
+      true
+    end
 
     def set_items
       @items = get_items

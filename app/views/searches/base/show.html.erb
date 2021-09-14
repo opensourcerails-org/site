@@ -4,7 +4,7 @@
   <%= render_projects(@projects, lead: "", classes: "pb-5") %>
 <% end %>
 
-<%= admin_panel do %>
+<%= @show_admin && admin_panel(:mini) do %>
   <% if @item.data['notable'] == true %>
     <%= button_to "disable notable",
                   admin_acts_as_taggable_on_tag_path(@item),

@@ -4,6 +4,9 @@ module Searches
   class CategoriesController < BaseController
     private
 
+    def show_admin?
+      false
+    end
     def index_search_title
       'Search open-source Ruby on Rails projects by category'
     end

@@ -6,6 +6,10 @@ module Searches
 
     private
 
+    def show_admin?
+      false
+    end
+
     def get_items
       TagCache.app_directories
     end

@@ -1,3 +1,48 @@
 @import "../theme/plugins/bootstrap/bootstrap.min.css";
 @import "../theme/plugins/swiper/swiper-bundle.min.css";
 @import "../theme/assets/scss/style.scss";
+
+div#admin {
+  right: 0px !important;
+  z-index: 9999 !important;
+  position: fixed !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 600px !important;
+  max-width: 100vw !important;
+  overflow: hidden !important;
+  background-color: white;
+  overflow-y: scroll !important;
+  background-color: #fff !important;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -2px rgb(0 0 0 / 5%) !important;
+}
+
+#admin.admin-mini {
+  width: 175px !important;
+  height: 100px;
+  bottom: 0 !important;
+  position: fixed !important;
+  margin-bottom: 15px;
+  right: 15px !important;
+  top: auto !important;
+}
+
+#admin.closed {
+  width: 150px !important;
+  height: 65px;
+  bottom: 0 !important;
+  position: fixed !important;
+  top: auto !important;
+}
+#admin.closed .if-closed { display: block !important; }
+#admin.open .if-open { display: block !important; }
+#admin:not(.closed) .if-closed { display: none !important }
+#admin:not(.open) .if-open { display: none !important }
+#admin.open .admin-panel {
+  width: 300px !important;
+  height: 100px;
+  bottom: 0 !important;
+  position: fixed !important;
+  top: auto !important;
+}
+.cursor-pointer { cursor: pointer !important; }

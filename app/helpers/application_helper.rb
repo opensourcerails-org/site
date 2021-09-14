@@ -39,21 +39,25 @@ module ApplicationHelper
   end
 
   # shit but whatever
-  def admin_panel(&block)
+  def admin_panel(size = :large, &block)
+    toggle_admin_thing = (link_to('&times;'.html_safe, "/admin/dashboard/toggle_admin?return_to=#{request.path}", remote: true, style: 'text-align: right; position: absolute !important; right: 5px; top: -4px; font-size: 20px;', onclick: "var hasClosed = admin.classList.contains('closed'); if(hasClosed) { admin.classList.remove('closed'); admin.classList.add('open'); } else { admin.classList.remove('open'); admin.classList.add('closed'); }"))
     if admin_user_signed_in?
-      content_tag(:div, id: :admin, class: 'card card-body') do
+      content_tag(:div, id: :admin, class: "card card-body admin-#{size} #{hide_admin? ? 'closed' : 'open'}") do
+        concat(content_tag(:div, class: "if-closed") do
+          concat("Hidden")
+          concat(toggle_admin_thing)
+        end)
         if hide_admin?
-          concat(link_to('toggle admin', "/admin/dashboard/toggle_admin?return_to=#{request.path}", remote: true,
-                                                                                                    onclick: "admin.querySelector('.d-none').classList.remove('d-none');this.remove()"))
-          concat(content_tag(:div, class: 'd-none') do
+          concat(content_tag(:div, class: 'if-open') do
                    yield block
-                   concat(link_to('&times;'.html_safe,
-                                  "/admin/dashboard/toggle_admin?return_to=#{request.path}", remote: true, style: 'text-align: right; position: absolute !important; right: 5px; top: -4px; font-size: 20px;', onclick: 'document.getElementById("admin").classList.add("d-none")'))
+                   concat(toggle_admin_thing)
                  end)
         else
-          yield block
-          concat(link_to('&times;'.html_safe, "/admin/dashboard/toggle_admin?return_to=#{request.path}", remote: true,
-                                                                                                         style: 'text-align: right; position: absolute !important; right: 5px; top: -4px; font-size: 20px;', onclick: 'document.getElementById("admin").classList.add("d-none")'))
+          concat(content_tag(:div, class: 'if-open') do
+            yield block
+            concat(toggle_admin_thing)
+          end)
+          concat(toggle_admin_thing)
         end
       end
     end
