@@ -4,35 +4,37 @@
   <%= render_projects(@projects, lead: "", classes: "pb-5") %>
 <% end %>
 
-<%= @show_admin && admin_panel(:mini) do %>
-  <% if @item.data['notable'] == true %>
-    <%= button_to "disable notable",
-                  admin_acts_as_taggable_on_tag_path(@item),
-                  params: {'acts_as_taggable_on_tag[notable]': false },
-                  method: :patch,
-                  remote: true
-    %>
-  <% else %>
-    <%= button_to "make notable",
-                  admin_acts_as_taggable_on_tag_path(@item),
-                  params: {'acts_as_taggable_on_tag[notable]': true },
-                  method: :patch,
-                  remote: true
-    %>
-  <% end %>
-  <% if @item.data['stack'] == true %>
-    <%= button_to "disable stack",
-                  admin_acts_as_taggable_on_tag_path(@item),
-                  params: {'acts_as_taggable_on_tag[stack]': false },
-                  method: :patch,
-                  remote: true
-    %>
-  <% else %>
-    <%= button_to "make stack",
-                  admin_acts_as_taggable_on_tag_path(@item),
-                  params: {'acts_as_taggable_on_tag[stack]': true },
-                  method: :patch,
-                  remote: true
-    %>
+<% if @show_admin %>
+  <%= admin_panel(:mini) do %>
+    <% if @item.data['notable'] == true %>
+      <%= button_to "disable notable",
+                    admin_acts_as_taggable_on_tag_path(@item),
+                    params: {'acts_as_taggable_on_tag[notable]': false },
+                    method: :patch,
+                    remote: true
+      %>
+    <% else %>
+      <%= button_to "make notable",
+                    admin_acts_as_taggable_on_tag_path(@item),
+                    params: {'acts_as_taggable_on_tag[notable]': true },
+                    method: :patch,
+                    remote: true
+      %>
+    <% end %>
+    <% if @item.data['stack'] == true %>
+      <%= button_to "disable stack",
+                    admin_acts_as_taggable_on_tag_path(@item),
+                    params: {'acts_as_taggable_on_tag[stack]': false },
+                    method: :patch,
+                    remote: true
+      %>
+    <% else %>
+      <%= button_to "make stack",
+                    admin_acts_as_taggable_on_tag_path(@item),
+                    params: {'acts_as_taggable_on_tag[stack]': true },
+                    method: :patch,
+                    remote: true
+      %>
+    <% end %>
   <% end %>
 <% end %>
