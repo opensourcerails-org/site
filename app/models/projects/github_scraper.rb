@@ -9,7 +9,7 @@ module Projects
     private
 
     def get(url, **options)
-      HTTP.get(url, headers: { 'Authorization' => "token #{ENV['GITHUB_TOKEN']}" }, **options)
+      HTTP.follow.get(url, headers: { 'Authorization' => "token #{ENV['GITHUB_TOKEN']}" }, **options)
     end
   end
 end
