@@ -15,7 +15,7 @@ There's a lot of cleaning up that could be done, but in my mad-dash of a weekend
 
 ## Production requirements
 
-As of this blame, production hums along nicely at ~800MB of RAM. Assume 2GB to be safe.
+As of this blame, production hums along nicely at ~800MB of RAM due to a lot of in-memory caching. Assume 2GB to be safe.
 
 ## Todos
 
