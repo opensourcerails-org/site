@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/admin/sidekiq'
   end
   direct :cdn_image do |model, options|
+    abort
     expires_in = options.delete(:expires_in) { ActiveStorage.urls_expire_in }
 
     if model.respond_to?(:signed_id)
