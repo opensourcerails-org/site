@@ -72,9 +72,13 @@ module Projects
     end
 
     def parse_gemfile(content)
-      lines = content.scan(/^\s?gem\s*(?:'|")(.*)(?:'|")/).flatten
-      lines.each do |line|
-        @gems << line.split('"')[0].split("'")[0].split(',')[0]
+      begin
+        t = Tempfile.new
+        t.write content
+        t.rewind
+        @gems = Bundler::Definition.build(t, nil, {}).dependencies.map(&:name)
+      ensure
+        t.close
       end
     end
 
