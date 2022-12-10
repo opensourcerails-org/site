@@ -68,14 +68,7 @@ module Projects
     end
 
     def parse_lockfile(content)
-      dependencies_part = content.split(/^DEPENDENCIES/)[1].split('BUNDLED WITH')[0]
-      dependencies_part.lines.each do |line|
-        next if line.blank?
-        break if line.empty?
-
-        value = line.scan(/([A-Za-z\-_0-9]+)\s/).flatten.first.to_s.downcase
-        @gems << value
-      end
+      @gems = Bundler::LockfileParser.new(content).specs.map(&:name)
     end
 
     def parse_gemfile(content)
