@@ -6,8 +6,8 @@ class SitemapsController < ApplicationController
 
   def index
     respond_to do |f|
-      f.any do
-        render template: 'sitemaps/index.xml.builder'
+      f.xml do
+
       end
     end
   end

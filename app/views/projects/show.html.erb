@@ -64,12 +64,12 @@
         <h2 class="text-dark h2 mb-3"><%= @project.name %></h2>
         <p class="lead"><%= @project.description %></p>
       </div>
-
+<% if @project.short_blurb.present? %>
       <div class="mb-5 ">
         <h3 class="h3 mb-3 text-dark">Our take</h3>
         <p class="mb-3"><%= @project.short_blurb.presence || "This project was just recently added and I haven't gotten around to digging through it yet." %></p>
       </div>
-
+<% end %>
       <div class="mb-5">
         <h3 class="text-dark h3 mb-3">From GitHub</h3>
         <p class="lead"><%= @project.github_about %></p>

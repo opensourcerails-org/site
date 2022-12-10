@@ -1,17 +1,15 @@
-# frozen_string_literal: true
-
 ActiveAdmin.setup do |config|
   # == Site Title
   #
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = 'OpenSourceRails'
+  config.site_title = "OpenSourceRails"
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #
-  config.site_title_link = '/'
+  # config.site_title_link = "/"
 
   # Set an optional image to be displayed for the header
   # instead of a string (overrides :site_title)
@@ -26,7 +24,7 @@ ActiveAdmin.setup do |config|
   # will be added to.
   #
   # eg:
-  #   config.default_namespace = :hello_world
+  config.default_namespace = :admin
   #
   # This will create resources in the HelloWorld module and
   # will namespace routes to /hello_world/*
@@ -159,7 +157,7 @@ ActiveAdmin.setup do |config|
   # You can exclude possibly sensitive model attributes from being displayed,
   # added to forms, or exported by default by ActiveAdmin
   #
-  config.filter_attributes = %i[encrypted_password password password_confirmation]
+  config.filter_attributes = [:encrypted_password, :password, :password_confirmation]
 
   # == Localize Date/Time Format
   #
@@ -202,6 +200,8 @@ ActiveAdmin.setup do |config|
   # resources or you can enable them globally from here.
   #
   # config.create_another = true
+  config.register_stylesheet 'https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.1/trix.css'
+  config.register_javascript 'https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.1/trix.js'
 
   # == Register Stylesheets & Javascripts
   #
@@ -333,5 +333,5 @@ ActiveAdmin.setup do |config|
   # By default, Active Admin uses Sprocket's asset pipeline.
   # You can switch to using Webpacker here.
   #
-  config.use_webpacker = true
+  # config.use_webpacker = true
 end

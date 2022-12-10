@@ -37,14 +37,14 @@ Rails.application.routes.draw do
   root 'projects#index'
 
   resources :projects, only: %i[index show], param: :slug
-  resources :most_popular_projects, path: 'most-popular', only: [:index]
-  resources :recently_added_projects, path: 'recently-added', only: [:index]
-  resources :last_active_projects, path: 'last-active', only: [:index]
+  resources :most_popular_projects, path: 'most-popular-open-source-ruby-on-rails-apps', only: [:index]
+  resources :recently_added_projects, path: 'newest-open-source-ruby-on-rails-apps', only: [:index]
+  resources :last_active_projects, path: 'active-open-source-ruby-on-rails-apps', only: [:index]
 
   resource :search, only: [:show] do
     scope module: :searches do
       with_options only: %i[index show], param: :slug do
-        resources :gems, path: 'by-gem'
+        resources :gems, path: 'open-source-ruby-on-rails-apps-using-gem'
         resources :categories, path: 'by-category'
         resources :packages, path: 'by-package'
         resources :objects, path: 'by-object'

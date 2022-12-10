@@ -1,9 +1,19 @@
-require("../../plugins/jquery/jquery.min.js")
-const bootstrap = require("../../plugins/bootstrap/bootstrap.bundle.min.js")
+import "@hotwired/turbo-rails"
+import Rails from '@rails/ujs';
+import 'jquery';
+import '@popperjs/core'
+import "bootstrap"
 
-! function($) {
-    window.$ = $
-    "use strict";
+import "controllers"
+import "ahoy"
+
+import "trix"
+import "@rails/actiontext"
+
+Rails.start()
+
+! function() {
+    var $ = window.$;
     function e() {
         var o = document.querySelector(".scroll-progress path"),
             n = o.getTotalLength();
@@ -23,7 +33,7 @@ const bootstrap = require("../../plugins/bootstrap/bootstrap.bundle.min.js")
             }, 500), !1
         })
     }
-//
+
     $(document).on('turbo:before-cache', function() {
         const $modals = document.querySelectorAll('.modal.show');
         $('body').removeClass('modal-open')
@@ -31,6 +41,7 @@ const bootstrap = require("../../plugins/bootstrap/bootstrap.bundle.min.js")
             $(modal).modal('hide')
         });
     })
+
     $(document).on('click', '[data-ahoy-event]', function(el) {
         const formData = new FormData();
         formData.append('name', el.target.getAttribute('data-ahoy-event'));

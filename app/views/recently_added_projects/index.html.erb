@@ -1,5 +1,5 @@
 <% cache cache_key_for_projects @projects, :recently_added do %>
-  <%= render_projects(@projects, title: "Recently added open-source Rails apps", lead: "Hand-selected, vetted, and curated, but not cured") do |project| %>
+  <%= render_projects(@projects, title: "Newest Open-Source Ruby on Rails apps", lead: "Hand-selected, vetted, and curated, but not cured") do |project| %>
     <%= "added #{time_ago_in_words project.created_at} ago" %>
   <% end %>
 

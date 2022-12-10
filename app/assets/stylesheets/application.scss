@@ -1,6 +1,6 @@
-@import "../theme/plugins/bootstrap/bootstrap.min.css";
-@import "../theme/plugins/swiper/swiper-bundle.min.css";
-@import "../theme/assets/scss/style.scss";
+@import "plugins/bootstrap/bootstrap.min.css";
+@import "plugins/swiper/swiper-bundle.min.css";
+@import "assets/scss/style.scss";
 
 div#admin {
   right: 0px !important;
@@ -14,7 +14,6 @@ div#admin {
   background-color: white;
   overflow-y: scroll !important;
   background-color: #fff !important;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -2px rgb(0 0 0 / 5%) !important;
 }
 
 #admin.admin-mini {
