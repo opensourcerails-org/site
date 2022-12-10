@@ -21,12 +21,12 @@ ActiveAdmin.register Project do
   end
 
   member_action :scan do
-    resource.scan!
+    resource.helpers.scan!
     redirect_to [:admin, resource], notice: 'Scanned.'
   end
 
   member_action :scrape_app do
-    resource.scrape_app!
+    resource.helpers.scrape_app!
     redirect_to [:admin, resource], notice: 'Scraped app.'
   end
 
@@ -35,7 +35,7 @@ ActiveAdmin.register Project do
   end
 
   member_action :scrape_last_activity do
-    resource.scrape_last_activity!
+    resource.helpers.scrape_last_activity!
     redirect_to [:admin, resource], notice: 'Scraped last activity.'
   end
 
@@ -48,7 +48,7 @@ ActiveAdmin.register Project do
   end
 
   member_action :scrape_meta do
-    resource.scrape_meta!
+    resource.helpers.scrape_meta!
     redirect_to [:admin, resource], notice: 'Scraped meta.'
   end
 
@@ -57,7 +57,7 @@ ActiveAdmin.register Project do
   end
 
   member_action :check_pulse do
-    resource.check_pulse!
+    resource.helpers.check_pulse!
     redirect_to [:admin, resource], notice: 'Checked pulse.'
   end
 
@@ -66,7 +66,7 @@ ActiveAdmin.register Project do
   end
 
   member_action :analyze_stacks do
-    resource.analyze_stacks!
+    resource.helpers.analyze_stacks!
     redirect_to [:admin, resource], notice: 'Analyzed stack.'
   end
 
@@ -75,7 +75,7 @@ ActiveAdmin.register Project do
   end
 
   member_action :scrape_gemfile do
-    resource.scrape_gemfile!
+    resource.helpers.scrape_gemfile!
     redirect_to [:admin, resource], notice: 'scraped gemfile.'
   end
 
@@ -84,7 +84,7 @@ ActiveAdmin.register Project do
   end
 
   member_action :scrape_packages do
-    resource.scrape_packages!
+    resource.helpers.scrape_packages!
     redirect_to [:admin, resource], notice: 'scraped packages.'
   end
 

@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class Project < ApplicationRecord
+  class MissingGems < RuntimeError; end
+  class MissingBranch < RuntimeError; end
+
   class Helpers
     def initialize(project)
       @project = project
@@ -41,7 +44,7 @@ class Project < ApplicationRecord
     end
 
     def scrape_app
-      raise ArgumentError, 'requires branch. Please run #scrape_meta! first.' if @project.branch.nil?
+      raise MissingBrach, 'requires branch. Please run #scrape_meta! first.' if @project.branch.nil?
 
       Projects::GithubAppScraper.new(@project)
     end
@@ -53,7 +56,7 @@ class Project < ApplicationRecord
     end
 
     def scrape_gemfile
-      raise ArgumentError, 'requires branch. Please run #scrape_meta! first.' if @project.branch.nil?
+      raise MissingBrach, 'requires branch. Please run #scrape_meta! first.' if @project.branch.nil?
 
       Projects::GemfileScraper.new(@project)
     end
@@ -65,7 +68,7 @@ class Project < ApplicationRecord
     end
 
     def scrape_packages
-      raise ArgumentError, 'requires branch. Please run #scrape_meta! first.' if @project.branch.nil?
+      raise MissingBranch, 'requires branch. Please run #scrape_meta! first.' if @project.branch.nil?
 
       Projects::PackageScraper.new(@project)
     end
@@ -77,7 +80,7 @@ class Project < ApplicationRecord
     end
 
     def analyze_stacks
-      raise ArgumentError, 'requires gems. Please run #scrape_gemfile! first.' if @project.gems.empty?
+      raise MissingGems, 'requires gems. Please run #scrape_gemfile! first.' if @project.gems.empty?
 
       Projects::StackAnalyzer.new(@project)
     end
@@ -94,7 +97,7 @@ class Project < ApplicationRecord
 
     # this isn't used yet
     def check_pulse
-      raise ArgumentError, 'requires gems. Please run #scrape_gemfile! first.' if @project.gems.empty?
+      raise MissingGems, 'requires gems. Please run #scrape_gemfile! first.' if @project.gems.empty?
 
       Projects::PulseCalculator.new(@project)
     end
