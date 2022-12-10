@@ -36,3 +36,5 @@ yarn-debug.log*
 .yarn-integrity
 /.idea/*
 /storage
+
+/config/credentials/production.key

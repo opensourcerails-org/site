@@ -28,6 +28,7 @@ module Projects
       @name = json['name']
       @website = json['homepage']
       @license = LicenseFinder.from(json.dig('license', 'name'))
+      self
     end
   end
 end

@@ -43,7 +43,7 @@ gem 'activeadmin_addons', '~> 1.8'
 gem 'acts-as-taggable-on', '~> 8.1'
 gem 'ahoy_matey', '~> 4.0'
 gem 'attr_json', '~> 1.3'
-gem 'aws-sdk-s3'
+gem "aws-sdk-s3", require: false
 gem 'devise', '~> 4.8'
 gem 'draper', '~> 4.0'
 gem 'friendly_id', '~> 5.4'

@@ -44,7 +44,7 @@ class Project < ApplicationRecord
     end
 
     def scrape_app
-      raise MissingBrach, 'requires branch. Please run #scrape_meta! first.' if @project.branch.nil?
+      raise MissingBranch, 'requires branch. Please run #scrape_meta! first.' if @project.branch.nil?
 
       Projects::GithubAppScraper.new(@project)
     end
@@ -56,7 +56,7 @@ class Project < ApplicationRecord
     end
 
     def scrape_gemfile
-      raise MissingBrach, 'requires branch. Please run #scrape_meta! first.' if @project.branch.nil?
+      raise MissingBranch, 'requires branch. Please run #scrape_meta! first.' if @project.branch.nil?
 
       Projects::GemfileScraper.new(@project)
     end
@@ -167,7 +167,7 @@ class Project < ApplicationRecord
                  select(:id, :slug, :name, :description, :short_blurb, :color, :updated_at).includes(:adjectives).with_attached_primary_image
                }
   scope :hidden, -> { where.not(hidden_at: nil) }
-  scope :visible, -> { where(hidden_at: nil) }
+  scope :visible, -> { where(hidden_at: nil).where.not(last_activity_at: nil) }
 
   attribute :skip_scan, :boolean, default: false
 
