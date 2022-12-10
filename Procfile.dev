@@ -1,3 +1,2 @@
 web: rails s
-pack: bin/webpack-dev-server
 worker: bundle exec sidekiq
