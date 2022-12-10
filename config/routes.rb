@@ -38,7 +38,7 @@ Rails.application.routes.draw do
 
   root 'projects#index'
 
-  resources :projects, only: %i[index show], param: :slug
+  resources :projects, only: %i[index show update], param: :slug
   resources :most_popular_projects, path: 'most-popular-open-source-ruby-on-rails-apps', only: [:index]
   resources :recently_added_projects, path: 'newest-open-source-ruby-on-rails-apps', only: [:index]
   resources :last_active_projects, path: 'active-open-source-ruby-on-rails-apps', only: [:index]

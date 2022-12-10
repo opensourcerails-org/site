@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ProjectsController < ApplicationController
+  skip_forgery_protection
+
   rescue_from ActiveRecord::RecordNotFound do
     redirect_to projects_path
   end
@@ -17,5 +19,13 @@ class ProjectsController < ApplicationController
                   og: { title: "#{@project.name} on OpenSourceRails.org" }
     set_meta_tags og: { image: @project.primary_image.url(expires_in: 24.hours) } if @project.primary_image.present?
     ahoy.track '$viewed_project', slug: params[:slug]
+  end
+
+  def update
+    if params[:api_key] == ENV['API_KEY']
+      @project = Project.friendly.visible.find(params[:slug])
+      @project.primary_image.attach(params.permit(:primary_image)[:primary_image])
+      return head :ok
+    end
   end
 end
