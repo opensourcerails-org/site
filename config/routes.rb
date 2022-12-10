@@ -65,7 +65,7 @@ Rails.application.routes.draw do
   end
 
   resource :about, only: [:show]
-  resource :newsletter, only: [:show, :create]
+  #resource :newsletter, only: [:show, :create]
   resource :sorry, only: [:create]
   resources :updates, only: [:index]
   resources :sitemaps, only: [:index], path: 'sitemap', defaults: { format: :xml }
