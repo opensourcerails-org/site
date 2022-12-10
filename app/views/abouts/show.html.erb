@@ -1,16 +1,13 @@
 <section class=" bg-white py-5">
   <div class="container">
-    <div class="row justify-content-start justify-content-lg-between align-items-center py-sm-0">
-      <div class="col-xl-5 col-lg-6 order-last pt-3">
-        <img loading="lazy" class="img-fluid" src="/me.jpeg" alt="joshmn cowboy picture">
-        <p style="font-size:12px; text-align:center">joshmn cowboy version; joshmn is not always cowboy</p>
-      </div>
+    <div class="row justify-content-center align-items-center">
       <div class="col-lg-6 mt-5 mt-lg-0 mt-0">
         <p class="lead text-dark mb-3 ">Hi! I'm Josh. I really like open-source. It's not only good for the environment, but also a great learning tool.</p>
         <p class="mb-3">When I was starting my Ruby on Rails journey in 2011, I attributed a lot of my good code to that of others. This was made possible by open-source projects.</p>
         <p class="mb-3">I would visit <a href="http://web.archive.org/web/20130512052803/http://www.opensourcerails.com/" target=_blank>OpenSourceRails.com</a> almost daily, looking for inspiration and how other people wrote code. It was invaluable to me. However, like all good things, it has moved on.</p>
         <p class="mb-3">After receiving the nod from <a href="https://github.com/jacquescrocker" target="_blank">Jacques Crocker</a>, the original creator of OpenSourceRails.com, I created my own directory of open-source Rails projects with a small twist: a short synopsis and tagging. Thanks Jacques!</p>
         <p class="mb-3">I'm an occasional writer of technical-ish stuff, and fraud, sometimes piracy, and sometimes pizza at <a href="https://www.josh.mn">www.josh.mn</a> and I can be found on most places on the internet as <abbr>joshmn</abbr>.</p>
+        <% if false %>
         <%= turbo_frame_tag :newsletter_error %>
         <%= turbo_frame_tag :newsletter do %>
           <%= simple_form_for :newsletter, url: :newsletter, data: { 'turbo-frame': :newsletter } do |f| %>
@@ -24,6 +21,7 @@
           <p style="font-size:14px;">I send a brief, fun-to-read newsletter on the second Wednesday of each month with some bite-sized Railsisms and more from around the Rails community.</p>
 
         <% end %>
+          <% end %>
       </div>
     </div>
   </div>
@@ -83,23 +81,6 @@
         <div class="mt-4 pt-2">
           <p class="text-uppercase small font-weight-500 mb-1">Infrastructure management</p>
           <p><a href="https://hatchbox.io?via=josh-brody" class="line-link text-dark">HatchBox handles provisioning and deployment</a> so I don't have to play devops (referral link that tells Chris I love him). HatchBox is a godsend to bootstrappers like me. Try it, you'll love it, and you'll have a hard time going back to Heroku!</p>
-        </div>
-
-        <div class="mt-4 pt-2">
-          <p class="text-uppercase small font-weight-500 mb-1">Framework support</p>
-          <p><a href="https://rubygems.org" target="_blank" class="line-link text-dark">Contributors to the Ruby ecosystem</a>, and <a href="https://rubyonrails.org" target="_blank" class="line-link text-dark">Ruby on Rails</a> itself make me happy. I know nine languages well-enough to get to production, but only one is a joy to work with. Thank you, thank you, thank you.</p>
-        </div>
-        <div class="mt-4 pt-2">
-          <p class="text-uppercase small font-weight-500 mb-1">ActsAsTaggableOn and its contributors</p>
-          <p><a href="https://github.com/mbleigh" target="_blank" class="line-link text-dark">ActsAsTaggableOn makes tagging almost fun</a>. Basic tagging of objects is easy. But it quickly turns into a mess. <a href="https://github.com/mbeligh" target="_blank">mbeligh</a> is repsonsible for for this wonderful gem. It handles so much of this site.</p>
-        </div>
-        <div class="mt-4 pt-2">
-          <p class="text-uppercase small font-weight-500 mb-1">Bootstrap</p>
-          <p><a href="https://getbootstrap.com" target="_blank" class="line-link text-dark">Bootstrap</a> for not making me design. Changed the way that web works. If you don't remember what the web was like pre-Bootstrap, you're very young, and, you're very fortunate.</p>
-        </div>
-        <div class="mt-4 pt-2">
-          <p class="text-uppercase small font-weight-500 mb-1">Icon by freepik</p>
-          <p>Icons made by <a href="https://www.freepik.com" title="Freepik"  class="line-link text-dark" rel="nofollow noopener">Freepik</a> from <a href="https://www.flaticon.com/" class="line-link text-dark" title="Flaticon" rel="nofollow noopener">www.flaticon.com</a>. I'm not a designer, they are, and they have free icons.</p>
         </div>
       </div>
     </div>
