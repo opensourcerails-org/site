@@ -56,7 +56,7 @@
   <div class="order-first order-md-last col-lg-8">
     <div class="col-12 text-center">
       <% if @project.primary_image.persisted? %>
-        <img loading="lazy" class="img-fluid mb-3" style="height:100px;" src="<%= cdn_proxy_url @project.primary_image %>" alt="<%= @project.name %> image">
+        <img loading="lazy" class="img-fluid mb-3" style="height:100px;" src="<%= rails_storage_proxy_path(@project.primary_image) %>" alt="<%= @project.name %> image">
       <% end %>
     </div>
     <div class="pl-0 pl-lg-5">

@@ -5,6 +5,6 @@ class ProjectDecorator < ApplicationDecorator
 
   # used for background colors on a projects list
   def extracted_colors
-    Miro::DominantColors.new(Rails.application.routes.url_helpers.cdn_proxy_url(primary_image.blob)).to_hex
+    Miro::DominantColors.new(Rails.application.routes.url_helpers.rails_storage_proxy_path(primary_image.blob)).to_hex
   end
 end
