@@ -46,9 +46,9 @@ Rails.application.routes.draw do
       with_options only: %i[index show], param: :slug do
         resources :gems, path: 'open-source-ruby-on-rails-apps-using-gem'
         resources :categories, path: 'by-category'
-        resources :packages, path: 'by-package'
-        resources :objects, path: 'by-object'
-        resources :stacks, path: 'by-stack'
+        resources :packages, path: 'open-source-ruby-on-rails-apps-using-package'
+        resources :objects, path: 'open-source-ruby-on-rails-apps-using-objects'
+        resources :stacks, path: 'open-source-ruby-on-rails-apps-using-stack'
       end
     end
   end
