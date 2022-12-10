@@ -412,7 +412,6 @@ GEM
       activemodel (>= 5.2)
     skylight (5.1.1)
       activesupport (>= 5.2.0)
-    spring (2.1.1)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -500,7 +499,6 @@ DEPENDENCIES
   sidekiq-scheduler (~> 3.1)
   simple_form
   skylight (~> 5.1)
-  spring
   sprockets-rails
   webmock
 
