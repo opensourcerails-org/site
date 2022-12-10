@@ -120,7 +120,10 @@ ActiveAdmin.register Project do
     selectable_column
     id_column
     column :name
-    column :github
+    column :github do |resource|
+      link_to "#{resource.github}", "https://github.com/#{resource.github}", target: :blank
+    end
+
     column :primary_image do |resource|
       resource.primary_image.present?
     end
