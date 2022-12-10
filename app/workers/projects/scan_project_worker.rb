@@ -8,7 +8,7 @@ module Projects
       project = Project.find_by(slug: slug)
       return unless project
 
-      project.scan!(first)
+      Scans::MetaWorker.perform_async(slug)
     end
   end
 end

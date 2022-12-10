@@ -8,7 +8,7 @@ module Projects
       project = Project.find_by(slug: slug)
       return unless project
 
-      project.sync!
+      project.helpers.sync!
     end
   end
 end

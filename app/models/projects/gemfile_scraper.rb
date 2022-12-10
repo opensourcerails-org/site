@@ -43,6 +43,7 @@ module Projects
           end
         end
 
+        return unless content_item
         content_response = get(content_item['url'])
         content = Base64.decode64(content_response.parsed_response['content']).force_encoding('UTF-8')
 

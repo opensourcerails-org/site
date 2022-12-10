@@ -31,6 +31,8 @@ module Projects
         end
       end
 
+      return unless content_item
+
       content_response = get(content_item['url'])
       content_json = JSON.parse(content_response.to_s)
       content = Base64.decode64(content_json['content']).force_encoding('UTF-8')
