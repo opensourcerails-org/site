@@ -199,6 +199,7 @@ GEM
     fugit (1.5.0)
       et-orbi (~> 1.1, >= 1.1.8)
       raabro (~> 1.4)
+    geocoder (1.8.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     has_scope (0.8.0)
@@ -478,6 +479,7 @@ DEPENDENCIES
   factory_bot_rails
   ffaker
   friendly_id (~> 5.4)
+  geocoder
   hiredis (~> 0.6.3)
   hotwire-rails
   http
