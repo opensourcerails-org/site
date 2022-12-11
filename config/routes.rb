@@ -10,32 +10,7 @@ Rails.application.routes.draw do
   constraints(->(request) { request.env['warden'].authenticate? }) do
     mount Sidekiq::Web => '/admin/sidekiq'
   end
-  direct :cdn_image do |model, options|
-    abort
-    expires_in = options.delete(:expires_in) { ActiveStorage.urls_expire_in }
-
-    if model.respond_to?(:signed_id)
-      route_for(
-        :rails_service_blob_proxy,
-        model.signed_id(expires_in: expires_in),
-        model.filename,
-        options.merge(host: ENV['CDN_HOST'])
-      )
-    else
-      signed_blob_id = model.blob.signed_id(expires_in: expires_in)
-      variation_key  = model.variation.key
-      filename       = model.blob.filename
-
-      route_for(
-        :rails_blob_representation_proxy,
-        signed_blob_id,
-        variation_key,
-        filename,
-        options.merge(host: ENV['CDN_HOST'])
-      )
-    end
-  end
-
+  
   root 'projects#index'
 
   resources :projects, only: %i[index show update], param: :slug
@@ -65,7 +40,6 @@ Rails.application.routes.draw do
   end
 
   resource :about, only: [:show]
-  #resource :newsletter, only: [:show, :create]
   resource :sorry, only: [:create]
   resources :updates, only: [:index]
   resources :sitemaps, only: [:index], path: 'sitemap', defaults: { format: :xml }
