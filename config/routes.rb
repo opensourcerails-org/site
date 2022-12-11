@@ -44,6 +44,7 @@ Rails.application.routes.draw do
   resources :updates, only: [:index]
   resources :sitemaps, only: [:index], path: 'sitemap', defaults: { format: :xml }
 
+  resource :compare, only: [:show, :create]
   match '/404', to: 'errors#not_found', via: :all
   match '/500', to: 'errors#internal_error', via: :all
 end

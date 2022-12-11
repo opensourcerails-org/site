@@ -1,0 +1,6 @@
+<h2>Compare how weird your stack is.</h2>
+
+<%= simple_form_for @form, url: compare_path, data: { turbo: false } do |f| %>
+  <%= f.input :gemfile, as: :text, label: "Your Gemfile content" %>
+  <%= f.submit "Compare my Gemfile" %>
+<% end %>

@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-3">
+    <pre><%= params[:compare_form][:gemfile] %></pre>
+  </div>
+  <div class="col-9">
+    <% @presenter.each do |k, comparisons| %>
+      <h2><%= k.to_s.humanize %> Gems</h2>
+      <ul>
+        <% comparisons.each do |comparison| %>
+          <li><%= comparison.name%> <%= comparison.score %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+  </div>
+</div>

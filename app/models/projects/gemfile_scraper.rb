@@ -68,7 +68,7 @@ module Projects
     end
 
     def parse_lockfile(content)
-      @gems = Bundler::LockfileParser.new(content).specs.map(&:name)
+      @gems = Bundler::LockfileParser.new(content).dependencies.map { |item| item[0] }
     end
 
     def parse_gemfile(content)
