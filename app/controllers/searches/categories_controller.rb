@@ -7,6 +7,7 @@ module Searches
     def show_admin?
       false
     end
+
     def index_search_title
       'Search open-source Ruby on Rails projects by category'
     end
