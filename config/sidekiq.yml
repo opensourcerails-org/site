@@ -4,6 +4,7 @@ production:
   :concurrency: 25
 :queues:
   - [default, 20]
+  - [ahoy, 10]
 :schedule:
   Bulk::Projects::SyncProjectsWorker:
     every: '24h'
