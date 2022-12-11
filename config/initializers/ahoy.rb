@@ -9,5 +9,5 @@ module Ahoy
 end
 
 Ahoy.api = false
-Ahoy.geocode = false
+Ahoy.geocode = true
 Ahoy.server_side_visits = :when_needed
