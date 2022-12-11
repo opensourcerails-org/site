@@ -24,6 +24,8 @@ Dotenv::Railtie.load if defined?(Dotenv)
 module Opensourcerails
   class Application < Rails::Application
     config.active_storage.resolve_model_to_route = :rails_storage_proxy
+    config.active_storage.urls_expire_in = 30.years
+
     config.load_defaults 6.1
     config.skylight.environments = ['production']
     config.exceptions_app = routes
