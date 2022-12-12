@@ -56,7 +56,7 @@
   <div class="order-first order-md-last col-lg-8">
     <div class="col-12 text-center">
       <% if @project.primary_image.persisted? %>
-        <img loading="lazy" class="img-fluid mb-3" style="height:100px;" src="<%= @project.primary_image.url %>" alt="<%= @project.name %> image">
+        <img loading="lazy" class="img-fluid mb-3" style="height:100px;" src="<%= @project.primary_image.url(expires_in: 30.years) %>" alt="<%= @project.name %> image">
       <% end %>
     </div>
     <div class="pl-0 pl-lg-5">

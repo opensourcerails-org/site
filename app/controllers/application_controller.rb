@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
       end
     end
   end
+
   after_action :track_action, if: -> { track_action? }
   skip_before_action :track_ahoy_visit, if: -> { !track_action? }
 
