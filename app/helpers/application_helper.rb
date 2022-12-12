@@ -26,7 +26,7 @@ module ApplicationHelper
       },
       og: {
         site_name: 'OpenSourceRails.org',
-        url: request.url(expires_in: 30.years),
+        url: request.url,
         image: 'https://opensourcerails.org/android-chrome-512x512.png',
         title: meta_tags[:title],
         description: meta_tags[:description]
