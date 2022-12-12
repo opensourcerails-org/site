@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
       if self.request.host == ENV['LOCAL_IP']
         return head 502 # confuse ppl cuz too lazy to block it in caddy
       end
-      if self.request.host == "opensourcerails.org" || request.host == 'www.opensourcerails.org'
+      unless self.request.host == "opensourcerails.org" || request.host == 'www.opensourcerails.org'
         redirect_to "https://opensourcerails.org#{request.path}", status: :found, allow_other_host: true
       end
     end
