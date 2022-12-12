@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
     @project = Projects::ShowDecorator.new(Project.friendly.visible.find(params[:slug]))
     set_meta_tags description: @project.github_about, title: @project.name,
                   og: { title: "#{@project.name} on OpenSourceRails.org" }
-    set_meta_tags og: { image: @project.primary_image.url(expires_in: 30.years) } if @project.primary_image.present?
+    set_meta_tags og: { image: @project.primary_image.url(expires_in: 1.week) } if @project.primary_image.present?
     ahoy.track '$viewed_project', slug: params[:slug]
   end
 
