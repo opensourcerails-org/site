@@ -4,7 +4,7 @@
       <div class="card-background" style="background-color:<%= project.color %>"></div>
       <a href="<%= url_for project %>" class=" text-center">
         <% if project.primary_image.present? %>
-          <img loading="lazy" src="<%= project.primary_image.url(expires_in: 1.week) %>" style="height:100px;  object-fit: scale-down;" class="card-img rounded-0" alt="<%= project.name %> primary image">
+          <img loading="lazy" src="<%= cdn_image_url project.primary_image %>" style="height:100px;  object-fit: scale-down;" class="card-img rounded-0" alt="<%= project.name %> primary image">
         <% end %>
       </a>
       <div class="card-body p-0 mt-4">

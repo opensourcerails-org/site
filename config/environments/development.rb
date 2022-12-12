@@ -75,6 +75,7 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   Rails.application.routes.default_url_options[:host] = 'localhost:3000'
 
+  config.hosts.clear
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 end
