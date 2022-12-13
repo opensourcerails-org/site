@@ -1,5 +1,5 @@
 <% cache cache_key_for_projects @projects, :last_active_projects do %>
-  <%= render_projects(@projects, title: "Active Open-Source Ruby on Rails applications", lead: "Hot off the push and API request, and probably some background jobs") do |project| %>
+  <%= render_projects(@projects, title: "Active open-source Ruby on Rails apps", lead: "Hot off the push and API request, and probably some background jobs.") do |project| %>
     <%= "Last updated #{project.last_activity_at ? "#{time_ago_in_words(project.last_activity_at)} ago" : "sometime in the past"}" %>
   <% end %>
 <% end %>

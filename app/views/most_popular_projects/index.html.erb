@@ -1,5 +1,5 @@
 <% cache cache_key_for_projects @projects, :most_popular_projects do %>
-  <%= render_projects(@projects, title: "Most popular open-source Rails apps", lead: "Hand-picked for you by me, and made popular by someone else") do |project| %>
-  <%= pluralize(number_with_delimiter(project.stars), "star") %>
-<% end %>
+  <%= render_projects(@projects, title: "Most Popular Open-Source Ruby on Rails Apps", lead: "Hand-picked for you by me, and made popular by someone else.") do |project| %>
+    <%= pluralize(number_with_delimiter(project.stars), "star") %>
+  <% end %>
 <% end %>
