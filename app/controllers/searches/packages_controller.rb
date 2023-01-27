@@ -6,6 +6,8 @@ module Searches
 
     def show
       @url = "https://www.npmjs.com/search?q=#{@item.name}"
+      set_meta_tags description: "A list of open-source Ruby on Rails apps using the #{@item.name} package.", title: show_search_title
+
       super
     end
 
