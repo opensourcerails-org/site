@@ -7,7 +7,7 @@ module Searches
 
     def show
       @url = "https://rubygems.org/search?query=#{@item.name}"
-      set_meta_tags description: "A list of open-source Ruby on Rails apps using the #{@item.name} gem."
+      set_meta_tags description: "A list of open-source Ruby on Rails apps using the #{@item.name} gem.", title: show_search_title
 
       super
     end
