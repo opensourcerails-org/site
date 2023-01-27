@@ -5,7 +5,7 @@ module Searches
     self.notable = true
 
     def index
-      set_meta_tags description: "A list of open-source Ruby on Rails apps using the #{@item.name} object pattern."
+      set_meta_tags description: "A list of open-source Ruby on Rails apps by object type."
       super
     end
 
@@ -13,6 +13,7 @@ module Searches
       set_meta_tags description: "A list of open-source Ruby on Rails apps using the #{@item.name} object pattern."
       super
     end
+
     private
 
     def show_admin?
