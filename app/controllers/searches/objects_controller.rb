@@ -4,6 +4,15 @@ module Searches
   class ObjectsController < BaseController
     self.notable = true
 
+    def index
+      set_meta_tags description: "A list of open-source Ruby on Rails apps using the #{@item.name} object pattern."
+      super
+    end
+
+    def show
+      set_meta_tags description: "A list of open-source Ruby on Rails apps using the #{@item.name} object pattern."
+      super
+    end
     private
 
     def show_admin?
