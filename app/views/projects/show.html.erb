@@ -1,3 +1,7 @@
+<style>
+  #readme img { max-width: 100%; }
+  #readme { background-color: #f1f1f1; padding: 1rem }
+</style>
 <% cache cache_key_for_project do %>
   <div class="order-last order-md-first col-lg-4">
     <div class="mb-5 ">
@@ -65,7 +69,7 @@
         <p class="lead"><%= @project.description %></p>
       </div>
 <% if @project.short_blurb.present? %>
-      <div class="mb-5 ">
+      <div class="mb-5">
         <h3 class="h3 mb-3 text-dark">Our take</h3>
         <p class="mb-3"><%= @project.short_blurb.presence || "This project was just recently added and I haven't gotten around to digging through it yet." %></p>
       </div>
@@ -112,6 +116,14 @@
 
 
       </div>
+
+      <% if @project.readme.present? %>
+        <h3 class="h3 mb-3 text-dark">Readme from GitHub</h3>
+
+        <div class="mb-5" id="readme">
+          <%= markdown(@project.readme) %>
+        </div>
+      <% end %>
     </div>
   </div>
 

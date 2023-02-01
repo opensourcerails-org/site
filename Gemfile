@@ -65,3 +65,5 @@ gem 'simple_form'
 gem 'skylight', '~> 5.1'
 gem 'importmap-rails'
 gem 'geocoder'
+
+gem "redcarpet", "~> 3.6"

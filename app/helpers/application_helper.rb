@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
+  def markdown(content)
+    options = [:hard_wrap, :safelink, :autolink, :no_intra_emphasis, :tables, :fenced_code_blocks, link_attributes: {rel: "nofollow noopen", target: :_blank}]
+    Markdown.new(content, *options).to_html.html_safe
+  end
+
   def parent_layout(layout)
     @view_flow.set(:layout, output_buffer)
     output = render(template: "layouts/#{layout}")

@@ -55,6 +55,18 @@ class Project < ApplicationRecord
       @project.update!(app_directory_list: result.app) if result
     end
 
+    def scrape_readme
+      raise MissingBranch, 'requires branch. Please run #scrape_meta! first.' if @project.branch.nil?
+
+      Projects::GithubReadmeScraper.new(@project)
+    end
+
+    def scrape_readme!
+      result = scrape_readme
+      result.run
+      @project.update!(readme: result.content) if result
+    end
+
     def scrape_gemfile
       raise MissingBranch, 'requires branch. Please run #scrape_meta! first.' if @project.branch.nil?
 
