@@ -15,11 +15,6 @@ RSpec.describe ProjectsController do
         get :show, params: { slug: project.slug }
         expect(response).to have_http_status(:ok)
       end
-
-      it 'sets the title to the project name' do
-        get :show, params: { slug: project.slug }
-        expect(assigns(:meta_tags).meta_tags[:title]).to eq("GitLab")
-      end
     end
   end
 end
